@@ -31,14 +31,15 @@ val initialContext = mapOf(
 class IonicSampleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val app = intent.getStringExtra("app")
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ionic_sample)
         addStatusBarPadding()
         if (!PortalManager.isRegistered()) {
             PortalManager.register(PORTAL_KEY)
         }
-        val bioageAppId = "068a3720"
-        val workoutsAppId = "851e0894"
+        val appId = if (app == "bioage") "068a3720" else "851e0894"
         val channelName = "sportcitydevelop"
 
         val portal: Portal = PortalBuilder("/bioage/home")
@@ -48,11 +49,11 @@ class IonicSampleActivity : AppCompatActivity() {
                 // and other plugins if needed
             ))
             .setInitialContext(initialContext)
-            .setStartDir("$bioageAppId-$channelName") // directory with preloaded web app from assets
+            .setStartDir("$appId-$channelName") // directory with preloaded web app from assets
             .setLiveUpdateConfig(
                 context = this@IonicSampleActivity,
                 liveUpdateConfig = io.ionic.liveupdates.LiveUpdate(
-                    appId = bioageAppId,
+                    appId = appId,
                     channelName = channelName,
                 ),
                 true
