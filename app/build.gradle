@@ -65,7 +65,7 @@ dependencies {
 // Download and unzip the latest Live Update build from Appflow before building the app.
 // Requires the Appflow CLI: https://ionic.io/docs/appflow/cli
 def appId = "068a3720"
-def channel = "egymdevelop"
+def channel = "sportcitydevelop"
 def ionicToken = ""
 
 def zipName = "${appId}-${channel}.zip"
