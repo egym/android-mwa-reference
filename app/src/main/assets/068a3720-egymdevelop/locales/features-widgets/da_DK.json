@@ -1,0 +1,13 @@
+{
+  "viewAll": "Se alle",
+  "locationsModal": {
+    "title": "Find center",
+    "searchLocationPlaceholder": "Søg tilgængelige lokationer",
+    "showXLocations_one": "Vis {{count}} placering",
+    "showXLocations_other": "Vis {{count}} placeringer",
+    "emptyState": {
+      "title": "Ingen placeringer fundet",
+      "description": "Prøv venligst et andet søgeord."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "common": {
+    "details": "详细信息"
+  },
+  "auth": {
+    "optInsTitle": "我们很重视您的隐私",
+    "mirrorOptInAdditionalInfoTitle": "更多信息和撤销权",
+    "mirrorOptInAdditionalInfoText1": "是的，我同意我的EGYM资料将与我在应用程序中设置的健身房/家庭俱乐部的个人资料*相连接，为此，储存在个人资料中的数据将被传送到另一个资料中，从而持续同步和更新。我可以在任何时候撤回我的同意。有关更多信息和撤销权，请参见我们的隐私政策。",
+    "mirrorOptInAdditionalInfoText2": "连接档案后，我在应用程序中设定的健身房/家庭健身房便可从我的EGYM档案中查看我的训练进程、我的活动和我自己的EGYM分析，并提供我的训练计划和分析，使我更容易根据我的需要调整EGYM设备，并进一步支持我努力实现我的目标。我的同意是自愿的，并且可以在任何时候撤销，并在未来生效（例如，在EGYM个人资料设置中）。",
+    "mirrorOptInAdditionalInfoText3": "*要链接资料，您的健身房和EGYM必须使用同一个电子邮件地址。\n因此，如有需要，请在您的健身房更新您的主数据。",
+    "mirrorOptInRevokeHint": "此同意书可以在<0>隐私设置</0>中随时撤销。"
+  }
+}

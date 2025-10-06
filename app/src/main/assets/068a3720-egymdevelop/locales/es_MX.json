@@ -1,0 +1,124 @@
+{
+  "chart": {
+    "noDataForThisPeriod": "No hay datos para este período"
+  },
+  "measurements": {
+    "types": {
+      "BMI": {
+        "description": "Una medida común para clasificar el peso corporal en relación con la altura corporal. Sin embargo, la significación es limitada porque las personas con mucha masa muscular pueden tener un IMC superior a 25 y aun así estar saludables. Para una mejor comprensión, observa la composición corporal (grasa, músculos, etc.). Puede influir de forma positiva la actividad física y la nutrición saludable."
+      },
+      "BODY_FAT": {
+        "description": "Un buen indicador para clasificar la composición corporal. La grasa corporal demasiado alta es un indicador básico de riesgo para la salud. Los niveles excelentes de grasa corporal dejan al descubierto los abdominales. Puede influir de forma positiva la actividad física y la nutrición saludable."
+      },
+      "WAIST_TO_HIP_RATIO": {
+        "description": "Indicador común de riesgos para la salud cardiovascular al observar la distribución de grasa, que está principalmente determinada de manera genética. Los tipos de cuerpo que tienen más grasa en la zona media del torso se correlacionan con un mayor riesgo. Para esos tipos de cuerpo, es aún más importante mantenerse delgado en general. Una nutrición saludable y el ejercicio regular ayudan a conseguirlo."
+      },
+      "WAIST_CM": {
+        "description": "El diámetro individual del diafragma. Influye de forma negativa la grasa visceral y el resultado del tipo morfológico."
+      },
+      "HIP_CM": {
+        "description": "El diámetro individual de la cadera, medido en la superficie máxima de los glúteos. Resultado de la composición del cuerpo."
+      },
+      "WEIGHT_KG": {
+        "description": "El peso corporal por sí solo tiene un valor muy limitado para la salud. Para obtener información real, observa la composición corporal (grasa, músculos, etc.). En general, un peso corporal elevado crea un mayor impacto en las articulaciones y los tendones. Necesitas desarrollar más fuerza muscular para compensar estos impactos."
+      },
+      "FAT_MASS_INDEX": {
+        "description": "El índice de masa grasa pone la masa grasa en relación con la altura del cuerpo. Es un muy buen indicador para clasificar la composición corporal, superior al % de grasa corporal. Los valores demasiado altos son un indicador básico de riesgo para la salud. Los valores excelentes son un signo de buena estética, dejan al descubierto los abdominales. Puede influir de forma positiva la actividad física y la nutrición saludable."
+      },
+      "SKELETAL_MUSCLE_MASS": {
+        "description": "Los músculos son importantes para la calidad de vida. Los valores demasiado bajos son un indicador de riesgo de lesiones y fragilidad (sarcopenia). Los músculos sanos regulan el sistema inmunológico, reducen las inflamaciones y mejoran el metabolismo (miocina). Influye de forma positiva el entrenamiento de fuerza."
+      },
+      "BODY_MUSCLE_PERCENTS": {
+        "description": "Los músculos son importantes para la calidad de vida. Los valores demasiado bajos son un indicador de riesgo de lesiones y fragilidad (sarcopenia). Los músculos sanos regulan el sistema inmunológico, reducen las inflamaciones y mejoran el metabolismo (miocina). Influye de forma positiva el entrenamiento de fuerza."
+      },
+      "FAT_FREE_MASS": {
+        "description": "Suma de músculo, hueso, órgano interno, agua, tendón, peso sanguíneo. Los valores altos se correlacionan con una definición estética corporal y los valores demasiado bajos con un bajo nivel de condición física. Influye de forma positiva el entrenamiento de fuerza y la nutrición saludable."
+      },
+      "FAT_FREE_MASS_INDEX": {
+        "description": "El índice de masa magra es un indicador atlético. Los valores altos se correlacionan con la definición estética corporal y los valores demasiado bajos con un bajo nivel de condición física. Influye de forma positiva el entrenamiento de fuerza y la nutrición saludable."
+      },
+      "VISCERAL_FAT": {
+        "description": "La grasa visceral es la grasa de la cavidad abdominal que rodea los órganos internos. Los valores altos son un factor de riesgo de enfermedades metabólicas y procesos inflamatorios. Puede reducirse significativamente mediante entrenamiento físico."
+      },
+      "VISCERAL_FAT_LEVEL_CM2": {
+        "description": "La grasa visceral es la grasa de la cavidad abdominal que rodea los órganos internos. Los valores altos son un factor de riesgo de enfermedades metabólicas y procesos inflamatorios. Puede reducirse significativamente mediante entrenamiento físico."
+      },
+      "VISCERAL_FAT_RATING": {
+        "description": "La grasa visceral es la grasa de la cavidad abdominal que rodea los órganos internos. Los valores altos son un factor de riesgo de enfermedades metabólicas y procesos inflamatorios. Puede reducirse significativamente mediante entrenamiento físico."
+      },
+      "BODY_WATER": {
+        "label": "Agua corporal",
+        "description": "Disolvente, agente de transporte, recurso nutritivo y regulador de temperatura. La deshidratación es un riesgo peligroso para la salud y bastante común. La ingesta excesiva de agua es menos común, pero también puede ser un problema en ciertas condiciones."
+      },
+      "BODY_PROTEIN_KG": {
+        "label": "Proteína Corporal",
+        "description": "Alta correlación con la masa muscular y de colágeno. Grupo de aminoácidos que son sustancias vitales, necesarias para todos los mecanismos de reparación del cuerpo y el proceso de curación. El nivel bajo de proteínas inhibe el sistema inmunológico y establece un estado de salud débil. Influyen de forma positiva el entrenamiento de fuerza y la comida rica en proteínas."
+      },
+      "BODY_MINERALS_KG": {
+        "label": "Minerales",
+        "description": "Parámetro para la estabilidad ósea. Los valores demasiado bajos están asociados con la osteoporosis, lo que aumenta el riesgo de fracturas óseas. El entrenamiento de fuerza es una profilaxis importante, que se combina mejor con suplementos de calcio y vitamina D."
+      },
+      "EXTRA_CELLULAR_WATER": {
+        "label": "Líquido extracelular",
+        "description": "La fracción de agua corporal representada por todos los componentes fluidos del sistema cardiovascular. Es el medio de transporte metabólico. Los valores demasiado bajos indican deshidratación poco saludable. El entrenamiento de resistencia puede mejorar el equilibrio de agua del cuerpo."
+      },
+      "INTRA_CELLULAR_WATER": {
+        "label": "Agua intracelular"
+      },
+      "SOFT_LEAN_MASS_KG": {
+        "label": "Masa magra blanda",
+        "description": "Suma del agua corporal total, las proteínas y los minerales no óseos. Los valores bajos indican posibles condiciones de alimentación poco saludables. Además de la predisposición genética, es el resultado de la nutrición individual y las condiciones del estilo de vida."
+      },
+      "SEGMENTAL_LEAN_TRUNK_KG": {
+        "label": "Tronco de masa magra"
+      },
+      "SEGMENTAL_MUSCLE_TRUNK_KG": {
+        "label": "Músculos del tronco"
+      },
+      "TOTAL_ENERGY_EXPENDITURE": {
+        "label": "Gasto energético total",
+        "description": "Esta es la energía diaria que necesita el cuerpo. Está determinada por su gasto de energía en reposo (~70 %) y la cantidad de actividad diaria (~30 %). Influye de forma positiva un aumento de la actividad física regular y un aumento del gasto energético en reposo."
+      },
+      "RESTING_ENERGY_EXPENDITURE": {
+        "label": "Gasto energético en reposo",
+        "description": "Esta es la energía diaria que necesita el cuerpo para realizar las funciones más básicas cuando está en reposo, como respirar o hacer circular la sangre. Tiene influencia de muchos factores, incluidos la edad, el sexo, la masa muscular y también el nivel de regeneración después de la actividad física. Influye de forma positiva el entrenamiento de fuerza y los entrenamientos cardiovasculares intensos."
+      },
+      "BODY_PHASE_ANGLE": {
+        "label": "Ángulo de fase",
+        "description": "El ángulo de fase es un indicador de la salud e integridad de las células del cuerpo. Un ángulo de fase alto indica membranas celulares intactas. Sube cuando estás saludable y baja cuando estás enfermo. También disminuye a medida que envejeces. Cuando aumenta el ángulo de fase, se ralentiza el envejecimiento. El ángulo de fase se puede mejorar mediante un aumento de la masa magra en relación con el peso corporal."
+      },
+      "BASAL_METABOLIC_RATE_KJ": {
+        "label": "Tasa metabólica basal",
+        "description": "Esta es la energía diaria que necesita el cuerpo para realizar las funciones más básicas cuando está en reposo, como respirar o hacer circular la sangre. Tiene influencia de muchos factores, incluidos la edad, el sexo, la masa muscular y también el nivel de regeneración después de la actividad física. Influye de forma positiva el entrenamiento de fuerza y los entrenamientos cardiovasculares intensos."
+      },
+      "SEGMENTAL_MUSCLE_ARM_KG": {
+        "description": "Masa muscular separada del brazo. Los valores bajos indican un nivel segmentario débil. Concéntrate en equilibrar tus lados derecho e izquierdo para evitar desequilibrios musculares. Se puede mejorar con el entrenamiento de bíceps o tríceps de un solo brazo."
+      },
+      "SEGMENTAL_FAT_TRUNK_KG": {
+        "label": "Masa grasa del tronco"
+      },
+      "SEGMENTAL_FAT_LEG_KG": {
+        "label": "Masa grasa en las piernas"
+      },
+      "SEGMENTAL_FAT_ARM_KG": {
+        "label": "Masa grasa del brazo"
+      },
+      "HAMSTRING_EXTENSION_DEGREE": {
+        "label": "Isquiotibiales",
+        "description": "La cadena dorsal está formada por los músculos de la pantorrilla y los isquiotibiales. Las posiciones monótonas, como sentarse o andar en bicicleta, pueden causar una mayor tensión y una flexibilidad limitada, lo que resulta en una mala postura y puede provocar dolor lumbar."
+      }
+    },
+    "interpretation": {
+      "low": "Bajo",
+      "normal": "Normal",
+      "excellent": "Excelente",
+      "elevated": "Elevado"
+    }
+  },
+  "home": {
+    "analysisEmptyState": {
+      "title": "Descubre tu Edad biológica"
+    }
+  },
+  "myBioage": "Mi Edad biológica"
+}

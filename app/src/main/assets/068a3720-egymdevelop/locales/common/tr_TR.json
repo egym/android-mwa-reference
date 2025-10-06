@@ -1,0 +1,31 @@
+{
+  "auth": {
+    "healthConsentToggleDescription": "EGYM hizmetlerini kullanmak amacıyla EGYM tarafından eğitim ve fitness verilerimin (sağlık verileri) işlenmesini kabul ediyorum. Toplanan veya paylaşılan tüketici sağlık verilerinin kategorileri de dahil olmak üzere kişisel verilerimin işlenmesine ilişkin daha fazla bilgi için {{0}} ifadelerine bakın. Onayımı istediğim zaman iptal edebileceğimi kabul ediyorum. Onayımı iptal etmenin EGYM'nin hizmetleri sağlayamayacağı ve hesabımı sileceği anlamına geldiğini kabul ediyorum.",
+    "optInsTitle": "Mahremiyetinizi ciddiye alıyoruz",
+    "mirrorOptInAdditionalInfoTitle": "Daha fazla bilgi ve cayma hakkı",
+    "mirrorOptInAdditionalInfoText1": "Evet, EGYM profilimin uygulamada belirlediğim spor salonlarının/asıl kulüplerimin spor salonu profilime bağlı olmasına ve bu amaçla profillerde depolanan verilerin diğer profile iletilmesine izin veriyorum ve böylece sürekli olarak senkronize edilmesi ve güncellenmesini kabul ediyorum. Daha fazla bilgi ve cayma hakkı için lütfen gizlilik politikamıza bakın.",
+    "mirrorOptInAdditionalInfoText2": "Profilleri bağlamak, uygulamada belirlediğim spor salonlarım / ev kulüplerimin bana eğitim planlarımı ve analizlerimi sağlayarak EGYM ekipmanını ihtiyaçlarıma göre ayarlamamı daha da kolaylaştırmak için egzersiz ilerlememi, etkinliklerimi ve EGYM profilimden kendi EGYM analizlerimi görüntülemesine; ve hedeflerime ulaşma çabamda beni daha da desteklemesine olanak tanır. Onayım isteğe bağlıdır ve gelecekte geçerli olacak şekilde herhangi bir zamanda iptal edilebilir (örneğin, EGYM profil ayarlarında).",
+    "mirrorOptInAdditionalInfoText3": "* Profilleri bağlamak için spor salonunuz ve EGYM için aynı e-posta adresi kullanılmalıdır.\nBu nedenle, eğer gerekliyse, lütfen spor salonunuzdaki asıl verilerinizi güncelleyin.",
+    "mirrorOptInRevokeHint": "Bu rıza, <0>Gizlilik Ayarları</0> üzerinden istenildiğinde geri çekilebilir."
+  },
+  "common": {
+    "restTime": "Dinlenme ",
+    "discard": "Iskarta",
+    "saveChanges": "Değişiklikleri kaydedelim mi?",
+    "saveChangesDesc": "Kaydetmezseniz değişiklikleriniz kaybolacaktır.",
+    "details": "Ayrıntılar"
+  },
+  "recommendedWeightGuidance": {
+    "EACH_SIDE": "taraf başına",
+    "ADDED_WEIGHT": "ilave ağırlık",
+    "BAR_PLATES": "bar + plakalar",
+    "TOTAL_WEIGHT": "toplam"
+  },
+  "units": {
+    "week": "hafta"
+  },
+  "lateralityGuidance": {
+    "UNILATERAL": "taraf başına"
+  },
+  "data_privacy": "Veri gizliliği"
+}

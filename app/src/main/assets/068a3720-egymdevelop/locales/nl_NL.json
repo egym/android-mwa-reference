@@ -1,0 +1,392 @@
+{
+  "homepageTitle": "BioAge",
+  "auth": {
+    "signupTitle": "Wat is jouw BioAge?",
+    "loginTitle": "Beoordeel uw BioAge en maak verbinding met EGYM apparatuur met EGYM ID.",
+    "signupDescription": "BioAge is een uitgebreide gezondheids- en fitnessindicator die verschillende belangrijke metingen combineert om een BioAge te creëren die kan worden vergeleken met je werkelijke fysieke leeftijd.",
+    "signupDescription2": "Je zult begrijpen hoe je trainingsroutine een positieve invloed heeft op je fitheid en gezondheid en je kunt je vooruitgang bijhouden."
+  },
+  "bodyRegions": {
+    "title": "Lichaamsregio's",
+    "upperBody": "Bovenlijf",
+    "core": "Romp",
+    "lowerBody": "Onderlijf"
+  },
+  "home": {
+    "assistance": "Hulp",
+    "categories": {
+      "title": "Categorieën",
+      "strength": "Kracht",
+      "metabolic": "Metabolisme",
+      "flexibility": "Flexibiliteit",
+      "cardio": "Cardio"
+    },
+    "information": {
+      "title": "Informatie",
+      "subtitle": "Hulp bij virtuele assistentie",
+      "text": "Meer informatie over BioAge en tips over het gebruik ervan",
+      "readMore": "Meer"
+    },
+    "analysisEmptyState": {
+      "title": "Ontdek je BioAge",
+      "text": "Berekend op basis van de maximale krachtresultaten uitgevoerd op EGYM-machines of handmatig toegevoegd in de app. Om BioAge na verloop van tijd te verbeteren, gebruik je de analyse van spieronevenwichtigheden om je trainingen op de meest effectieve manier aan te passen."
+    }
+  },
+  "about": {
+    "title": "Wat is de BioAge",
+    "topDescription": "Een meting die aangeeft hoe jouw algehele fitness en gezondheid is in vergelijking met anderen van jouw leeftijd.",
+    "subheader": "Hoe BioAge wordt berekend",
+    "howToBullet1": "Als je BioAge laag is, betekent dit dat je fitter bent.",
+    "howToBullet2": "De ideale BioAge is 21.",
+    "recommendationsBullet1": "Om vooruitgang te boeken en gezond te blijven moet je regelmatig trainen, gezond eten en voldoende drinken.",
+    "recommendationsBullet2": "Maar het belangrijkste is dat je van het leven geniet!",
+    "gotItButton": "Ik begrijp het",
+    "recommendationsBullet": "Gebruik deze informatie om met je trainer te overleggen over je trainingsdoelen en mogelijke aanpassing van je trainingsschema."
+  },
+  "assistance": {
+    "title": "Hoe u hulp kunt gebruiken",
+    "text": "Klik op de knop <0></0> op de schermen Kracht, Flexibiliteit, Metabolisme en Cardio-leeftijd om er meer informatie over te lezen."
+  },
+  "chart": {
+    "noDataForThisPeriod": "Geen gegevens beschikbaar voor deze periode.",
+    "emptyStateText": "De historische gegevensgrafiek verschijnt hier zodra de gegevens beschikbaar zijn",
+    "totalBioageDescription": "De BioAge vertegenwoordigt de huidige gezondheid en prestaties. Het is het gemiddelde van kracht, flexibiliteit, metabolisme en cardio. Normale waarden komen overeen met de werkelijke leeftijd en hoe jonger de BioAge is, hoe beter.",
+    "ageYearsYaxisLabel": "leeftijd (jr)",
+    "metabolicAgeDescription": "De metabolische leeftijd wordt berekend met behulp van lichaamsvet, taille-heupverhouding en body-mass-index. De metabolische leeftijd geeft jij een overzicht van de relatie tussen jouw lengte, gewicht en lichaamsvet."
+  },
+  "common": {
+    "realAge": "Echte leeftijd {{count}} jaar",
+    "weight": "Gewicht",
+    "height": "Lengte",
+    "waist": "Middel",
+    "hip": "Heup"
+  },
+  "metabolic": {
+    "title": "Metabolische leeftijd",
+    "about": {
+      "whatIsHeader": "Wat is de metabolische leeftijd",
+      "whatIsDescription": "Een meting van hoe goed jouw metabolische gezondheid is ontwikkeld door je lichaamssamenstelling te analyseren in vergelijking met anderen van jouw leeftijd.",
+      "howCalculatedHeader": "Hoe het wordt berekend",
+      "howCalculatedDescription": "We analyseren het verband tussen verschillende aspecten van je lichaamssamenstelling, zoals het percentage lichaamsvet, je BMI, en de middel-heup-ratio.",
+      "bodyFatDescription": "Je percentage lichaamsvet in vergelijking met je totale lichaamsmassa. Je kunt dit uitrekenen met een Lichaamsanalyse of een weegschaal met deze functie. Voor mannen ligt het gemiddelde op ongeveer 20%, voor vrouwen op ongeveer 27%.",
+      "bodyMassDescription": "De BMI vergelijkt je lichaamsgewicht met je lengte en geeft een nauwkeurige schatting van je lichaamssamenstelling. Een gezonde BMI ligt tussen de 18,5 en 25.",
+      "waistHipDescription": "De middel-heup-ratio vergelijkt de omtrek van je middel met die van je heup en geeft inzicht in je vet distributie. Hoe lager de verhouding, hoe lager het risico op hart- en vaatziekten en andere aandoeningen. Voor mannen ligt het gemiddelde op ongeveer 0,92, voor vrouwen op ongeveer 0,83"
+    },
+    "historyTitle": "Metabolische leeftijd"
+  },
+  "measurements": {
+    "title": "Metingen",
+    "about": "Over {{measurementName}}",
+    "howToMeasure": "Hoe te meten {{measurementName}}",
+    "types": {
+      "BMI": {
+        "label": "Body Mass Index",
+        "description": "Een veel voorkomende maat om het lichaamsgewicht te classificeren in relatie tot de lichaamslengte. Desalniettemin is de betekenis beperkt, omdat personen met veel spiermassa een BMI van meer dan 25 kunnen hebben en toch gezond kunnen zijn. Kijk voor een beter inzicht naar de lichaamssamenstelling (vet, spieren, ...). Kan positief worden beïnvloed door lichaamsbeweging en gezonde voeding.",
+        "howToMeasureDescription": "Voeg je huidige lengte en gewicht toe. Om je BMI juist te berekenen moet je gewicht altijd kloppen."
+      },
+      "BODY_FAT": {
+        "label": "Vet",
+        "description": "Een goede indicator om jouw lichaamssamenstelling te classificeren. Een te hoog lichaamsvet is een basisindicator voor gezondheidsrisico's. Uitstekende lichaamsvetniveaus onthullen de \"sixpack\". Kan positief worden beïnvloed door lichaamsbeweging en gezonde voeding.",
+        "howToMeasureDescription": "Het meest nauwkeurige resultaat bereik je met een Lichaamssamenstelling test. Neem hiervoor contact op met een van onze trainers. Je kunt ook een weegschaal met de functie 'Lichaamsanalyse' gebruiken, of een online rekenfunctie die het geschatte vetpercentage meet op basis van de omtrek van je lichaam."
+      },
+      "WAIST_TO_HIP_RATIO": {
+        "label": "Middel-heup-ratio",
+        "description": "Gemeenschappelijke indicator voor cardiovasculaire gezondheidsrisico's door te kijken naar de vetverdeling die voornamelijk genetisch bepaald is. Lichaamstypes met meer vet in het middelste gedeelte van de romp correleren met een hoger risico. Voor die lichaamstypes is het zelfs nog belangrijker om in het algemeen slank te blijven. Een gezonde voeding en regelmatige lichaamsbeweging helpt.",
+        "howToMeasureDescription": "Meet met een meetlint de omtrek van het smalste gedeelte van je buik, net boven je navel."
+      },
+      "WAIST_CM": {
+        "label": "Tailleomtrek",
+        "description": "Je individuele middenrifdiameter. Negatief beïnvloed door visceraal vet en resultaat van je morfologisch type."
+      },
+      "HIP_CM": {
+        "label": "Heupomtrek",
+        "description": "Je individuele heupdiameter, gemeten langs het grootste bilgebied. Resultaat van je lichaamssamenstelling."
+      },
+      "WEIGHT_KG": {
+        "label": "Gewicht",
+        "description": "Het lichaamsgewicht alleen heeft slechts een zeer beperkte waarde voor de gezondheid. Voor een echt inzicht kijk je naar de lichaamssamenstelling (vet, spieren,...).  In het algemeen zorgt een hoog lichaamsgewicht voor een grotere impact op gewrichten en pezen. Je moet meer spierkracht opbouwen om deze impact te compenseren. "
+      },
+      "FAT_MASS_INDEX": {
+        "label": "Fat Mass Index",
+        "description": "Fat Mass Index plaatst vetmassa in relatie tot de lengte van het lichaam. Het is een zeer goede indicator om de samenstelling van je lichaam te classificeren, superieur aan lichaamsvet %. Te hoge waarden zijn een basisindicator voor gezondheidsrisico's. Uitstekende waarden zijn een teken van goede esthetiek en onthult de \"sixpack\". Kan positief beïnvloed worden door lichaamsbeweging en gezonde voeding."
+      },
+      "SKELETAL_MUSCLE_MASS": {
+        "label": "Skeletspiermassa",
+        "description": "Spieren zijn belangrijk voor de kwaliteit van leven. Te lage waarden zijn een risico-indicator voor blessures en kwetsbaarheid (sarcopenie). Gezonde spieren reguleren je immuunsysteem, verminderen ontstekingen en verbeteren de stofwisseling (Myokines). Positief beïnvloed door krachttraining."
+      },
+      "BODY_MUSCLE_PERCENTS": {
+        "label": "Spiermassa",
+        "description": "Spieren zijn belangrijk voor de kwaliteit van leven. Te lage waarden zijn een risico-indicator voor blessures en kwetsbaarheid (sarcopenie). Gezonde spieren reguleren je immuunsysteem, verminderen ontstekingen en verbeteren de stofwisseling (Myokines). Positief beïnvloed door krachttraining."
+      },
+      "FAT_FREE_MASS": {
+        "label": "Vetvrije massa",
+        "description": "Som van spier-, pees-, bot-, orgaan-, water en bloed massa. Hoge waarden correleerden met een esthetische lichaamsdefinitie en te lage waarden met een laag fitnessniveau. Positief beïnvloed door krachttraining en gezonde voeding."
+      },
+      "FAT_FREE_MASS_INDEX": {
+        "label": "Vetvrije Massa Index",
+        "description": "Vetvrije massa Index is een atletische indicator. Hoge waarden correleren met esthetische lichaamsdefinitie en te lage waarden met een slecht fitnessniveau. Positief beïnvloed door krachttraining en gezonde voeding."
+      },
+      "VISCERAL_FAT": {
+        "label": "Visceraal vet",
+        "description": "Visceraal vet is het vet in je buikholte rond de inwendige organen. Hoge waarden zijn een risicofactor voor stofwisselingsziekten en ontstekingsprocessen. Kan aanzienlijk worden verminderd door fitnesstraining."
+      },
+      "VISCERAL_FAT_LEVEL_CM2": {
+        "label": "Visceraal vetniveau",
+        "description": "Visceraal vet is het vet in je buikholte rond de inwendige organen. Hoge waarden zijn een risicofactor voor stofwisselingsziekten en ontstekingsprocessen. Kan aanzienlijk worden verminderd door fitnesstraining."
+      },
+      "VISCERAL_FAT_RATING": {
+        "label": "Visceraal Vet Gehalte",
+        "description": "Visceraal vet is het vet in je buikholte rond de inwendige organen. Hoge waarden zijn een risicofactor voor stofwisselingsziekten en ontstekingsprocessen. Kan aanzienlijk worden verminderd door fitnesstraining."
+      },
+      "BODY_WATER": {
+        "label": "Lichaamswater",
+        "description": "Oplosmiddel, transportmiddel, voedingsbron en temperatuurregelaar. Uitdroging is een gevaarlijk gezondheidsrisico en komt vrij vaak voor. Te veel water opnemen komt minder vaak voor, maar kan onder bepaalde omstandigheden ook een probleem zijn."
+      },
+      "BODY_PROTEIN_KG": {
+        "label": "Lichaamseiwitten",
+        "description": "Grote correlatie met spier- en collageen massa. Aminozuren voorraad, wat basisstoffen voor leven zijn, nodig voor alle herstelmechanismen van het lichaam en het genezingsproces. Lage eiwitstatus onderdrukt je immuunsysteem en zorgt voor een zwakke gezondheid. Positief beïnvloed door krachttraining en eiwitrijk voedsel."
+      },
+      "BODY_MINERALS_KG": {
+        "label": "Mineralen",
+        "description": "Parameter voor je botstabiliteit. Te lage waarden worden in verband gebracht met osteoporose wat het risico op botbreuken vergroot. Krachttraining is een belangrijke profylaxe (toevoeging), het liefst gecombineerd met calcium- en vitamine D-supplementen."
+      },
+      "EXTRA_CELLULAR_WATER": {
+        "label": "Extracellulair water",
+        "description": "De hoeveelheid lichaamswater die wordt vertegenwoordigd door alle vloeibare componenten in jouw cardiovasculaire systeem. Het is jouw metabole transportmedium. Te lage waarden duiden op ongezonde uitdroging. Duurtraining kan jouw lichaamswaterbalans verbeteren."
+      },
+      "INTRA_CELLULAR_WATER": {
+        "label": "Intracellulair water",
+        "description": "De fractie lichaamswater die wordt vertegenwoordigd in al je lichaamscellen, die je batterijen zijn. De intracellulaire waterfractie is je acculader en ontgiftingsmiddel. Lage status duidt op ongezonde uitdroging, omdat droge batterijen niet werken. Sportieve training stabiliseert de status van je cellenbatterij."
+      },
+      "SOFT_LEAN_MASS_KG": {
+        "label": "Massa van zachte weefsels",
+        "description": "Som van je totale lichaamswater, eiwitten en niet-bot-mineralen. Lage waarden indiceren potentiële ongezonde voedingsomstandigheden. Naast genetische aanleg, het resultaat van individuele voedings- en leefstijl omstandigheden."
+      },
+      "SEGMENTAL_LEAN_TRUNK_KG": {
+        "label": "Magere massa romp",
+        "description": "Gescheiden magere massa romp. Lage waarden geven een zwakke segmentstatus weer. Richt je op een gezonde spiermassa in je romp. Je romp is het centrum van je lichaam en speelt een cruciale rol in de stabiliteit van je rug. Kan verbeterd worden door trainen van buik of rug en gezonde voeding."
+      },
+      "SEGMENTAL_MUSCLE_TRUNK_KG": {
+        "label": "Spieren romp",
+        "description": "Gescheiden spiermassa romp. Lage waarden geven een zwakke segmentstatus weer. Richt je op een gezonde spiermassa in je romp. Je romp is het centrum van je lichaam en speelt een cruciale rol in de stabiliteit van je rug. Kan verbeterd worden door trainen van buik of rug."
+      },
+      "TOTAL_ENERGY_EXPENDITURE": {
+        "label": "Totaal energieverbruik",
+        "description": "Dit is de dagelijkse energie die je lichaam nodig heeft. Het wordt bepaald door je energieverbruik in rust (~70%) en de hoeveelheid dagelijkse activiteit (~30%). Positief beïnvloed door een toename in regelmatige lichaamsactiviteit en toename in energieverbruik in rust."
+      },
+      "RESTING_ENERGY_EXPENDITURE": {
+        "label": "Energieverbruik in rust",
+        "description": "Dit is de dagelijkse energie die je lichaam nodig heeft om de basisfuncties uit te voeren wanneer je lichaam rust, zoals ademen of de bloedsomloop. Het wordt door meerdere factoren beïnvloed, waaronder leeftijd, geslacht, spiermassa en ook het herstelniveau na lichamelijke activiteit. Positief beïnvloed door krachttraining en intense cardio-workouts."
+      },
+      "BODY_PHASE_ANGLE": {
+        "label": "Fasehoek",
+        "description": "Fasehoek is een indicator van gezondheid en integriteit van je lichaamscellen. Een hoge fasehoek geeft intacte celmembranen aan. Het gaat omhoog wanneer je gezond bent, en omlaag wanneer je ziek bent. Het gaat ook omlaag bij het ouder worden. Wanneer je fasehoek omhoog gaat, vertraag je het ouder worden. De fasehoek kan het best verbeterd worden door een toename van vetvrije massa relatief aan lichaamsgewicht."
+      },
+      "BASAL_METABOLIC_RATE_KJ": {
+        "label": "Basaal metabolisme",
+        "description": "Dit is de dagelijkse energie die je lichaam nodig heeft om de basisfuncties uit te voeren wanneer je lichaam rust, zoals ademen of de bloedsomloop. Het wordt door meerdere factoren beïnvloed, waaronder leeftijd, geslacht, spiermassa en ook het herstelniveau na lichamelijke activiteit. Positief beïnvloed door krachttraining en intense cardio-workouts."
+      },
+      "SEGMENTAL_LEAN_ARM_KG": {
+        "label": "Magere massa arm",
+        "description": "Gescheiden magere massa arm. Lage waarden geven een zwakke segmentstatus weer. Focus op het in balans brengen van je rechter- en linkerzijde om onbalans in je spieren te vermijden. Kan verbeterd worden door het trainen van een enkele arm en gezonde voeding."
+      },
+      "SEGMENTAL_LEAN_LEG_KG": {
+        "label": "Magere massa been",
+        "description": "Gescheiden magere massa been. Lage waarden geven een zwakke segmentstatus weer. Focus op het in balans brengen van je rechter- en linkerzijde om onbalans in je spieren te vermijden. Kan verbeterd worden door het trainen van een enkel been en gezonde voeding."
+      },
+      "SEGMENTAL_MUSCLE_ARM_KG": {
+        "label": "Spieren arm",
+        "description": "Gescheiden spiermassa arm. Lage waarden geven een zwakke segment status weer. Focus op het in balans brengen van je rechter- en linkerzijde om onbalans in je spieren te vermijden. Kan verbeterd worden door het trainen van biceps of triceps van een enkele arm."
+      },
+      "SEGMENTAL_MUSCLE_LEG_KG": {
+        "label": "Spieren been",
+        "description": "Gescheiden spiermassa been. Lage waarden geven een zwakke segmentstatus weer. Focus op het in balans brengen van je rechter- en linkerzijde om onbalans in je spieren te vermijden. Kan verbeterd worden door het trainen van een enkel been."
+      },
+      "SEGMENTAL_FAT_TRUNK_KG": {
+        "label": "Vetmassa romp",
+        "description": "Gescheiden rompvetmassa. Lage waarden duiden op een zwakke segmentale status. Richt je op een gezonde vetmassa in je romp. Je romp is het centrum van je lichaam en speelt een cruciale rol in de stabiliteit van je rug. Kan worden verbeterd door buik- of rugtraining en gezonde voeding."
+      },
+      "SEGMENTAL_FAT_LEG_KG": {
+        "label": "Vet in benen",
+        "description": "Gescheiden vetmassa in de benen. Lage waarden geven een zwakke segmentstatus weer. Focus op het in balans brengen van je rechter- en linkerzijde om onbalans in je spieren te vermijden. Kan verbeterd worden door het trainen van een enkel been en gezonde voeding."
+      },
+      "SEGMENTAL_FAT_ARM_KG": {
+        "label": "Arm vetmassa",
+        "description": "Gescheiden vetmassa van de arm. Lage waarden geven een zwakke segmentstatus weer. Focus op het in balans brengen van je rechter- en linkerzijde om onbalans in je spieren te vermijden. Kan verbeterd worden door het trainen van een enkele arm en gezonde voeding."
+      },
+      "TORSO_LATERAL_FLEXION_DEGREE": {
+        "label": "Lat Flex",
+        "description": "De laterale rompspieren buigen, draaien en stabiliseren je 'romp'. Een verhoogde spierstijfheid en beperkte flexibiliteit kunnen pijn in de lumbale wervelkolom veroorzaken. Bovendien is het vermogen van het middenrif en de borstkas om uit te zetten beperkt, wat de normale ademhaling belemmert."
+      },
+      "NECK_LATERAL_FLEXION_DEGREE": {
+        "label": "Nek",
+        "description": "De laterale nekspieren stabiliseren en bewegen je hoofd. Eentonige houdingen zoals langdurig werken op een PC en ook stress leiden tot verhoogde spierspanning die kan leiden tot hoofdpijn, spanningspijn, kaken op elkaar en pijn in de cervicale wervelkolom."
+      },
+      "HIP_EXTENSION_DEGREE": {
+        "label": "Heup",
+        "description": "De heupbuigers regelen je houding tijdens bewegingen zoals lopen en rennen. Lang zitten in een samengetrokken positie zorgt ervoor dat de spieren korter worden, wat een negatieve invloed heeft op je houding en uiteindelijk leidt tot pijn in de lumbale wervelkolom."
+      },
+      "CHEST_EXTENSION_DEGREE": {
+        "label": "Borst",
+        "description": "De borstspieren bewegen je bovenarm en stabiliseren je schoudergewricht. Als je lange tijd in een voorovergebogen houding zit, zoals tijdens het werken aan een pc, verkorten de borstspieren, wat kan leiden tot pijn aan de halswervelkolom, schouderproblemen en een belemmering van de ademhalingsfunctie."
+      },
+      "HAMSTRING_EXTENSION_DEGREE": {
+        "label": "Achterste bovenbeenspier",
+        "description": "De dorsale ketting bestaat uit de kuitspieren en hamstrings. Eentonige houdingen zoals zitten of fietsen kunnen een hogere spanning en een beperkte flexibiliteit veroorzaken, wat resulteert in een slechte houding en kan leiden tot lage rugpijn."
+      },
+      "RESTING_HEART_RATE": {
+        "label": "Rusthartslag",
+        "description": "De rusthartslag is het aantal hartslagen per minuut wanneer u in rust bent, bijvoorbeeld wanneer u ontspannen bent, zit of ligt. U kunt eenvoudig uw rusthartslag beoordelen door de hartslagen gedurende 15 seconden te tellen en deze waarde te vermenigvuldigen. bij 4. U kunt uw hartslag vinden aan de pols of aan uw halsslagader. Een normale waarde voor de hartslag in rust ligt tussen 50 en 80 slagen per minuut. Een verhoogde rusthartslag gaat gepaard met een hoger sterftecijfer.",
+        "howtoMeasure": "Je kunt je hartslag in rust eenvoudig bepalen door de hartslagen gedurende 15 seconden te tellen en deze waarde te vermenigvuldigen met 4. Je kunt je hartslag vinden bij de pols of je halsslagader. Een normale waarde voor de hartslag in rust ligt tussen 50 en 80 slagen per minuut. Een verhoogde hartslag in rust wordt geassocieerd met een hoger sterftecijfer."
+      },
+      "BLOOD_PRESSURE_MMHG": {
+        "label": "Bloeddruk",
+        "description": "De bloeddruk weerspiegelt de algemene gezondheid van het cardiovasculaire systeem. Een hoge bloeddruk kan een indicator zijn van onderliggende ziekten en kan langetermijneffecten hebben. Een normale bloeddruk is ongeveer 120 systolisch en 80 diastolisch.",
+        "howtoMeasureListHeader": "Bloeddruk wordt gemeten in millimeter kwik (mmHg) en wordt weergegeven als 2 getallen:",
+        "howtoMeasureBullet1": "systolische druk – de druk wanneer uw hart bloed door uw lichaam stuwt",
+        "howtoMeasureBullet2": "diastolische druk - de druk wanneer je hart rust tussen twee hartslagen en het bloed rond je hart wordt geduwd",
+        "howtoMeasureListFooter": "Het hoogste getal is altijd de systolische druk en die wordt altijd als eerste gegeven. Bijvoorbeeld, een bloeddruk gegeven als \"120 over 80\" of 120/80 mmHg betekent een systolische druk van 120 mmHg en een diastolische druk van 80 mmHg.",
+        "howtoMeasureFooter": "Je kunt je bloeddruk meten met een bloeddrukmeter.",
+        "howtoMeasureHint": "Rook niet, drink geen cafeïnehoudende dranken en sport niet binnen 30 minuten voordat u uw bloeddruk meet. Ga zitten met een rechte en ondersteunde rug. Doe de meting niet over uw kleding heen."
+      },
+      "VO2MAX": {
+        "label": "VO2max",
+        "description": "De VO2max is een directe meting van je cardiovasculaire capaciteit en weerspiegelt het vermogen van je lichaam om langdurig te trainen bij een hogere intensiteit. Je kunt je VO2max bepalen via de cardiotest en met sportapparaten of horloges.",
+        "howtoMeasureLine1": "VO2max is een directe meting van je cardiovasculaire capaciteit en weerspiegelt het vermogen van je lichaam om langdurig te trainen bij een hogere intensiteit.",
+        "howtoMeasureLine2": "VO2max wordt gemeten in milliliter zuurstof die in één minuut per kilogram lichaamsgewicht (ml/kg/min) wordt gebruikt.",
+        "howtoMeasureLine3": "Je kunt je VO2max bepalen via de cardiotest en met sportapparaten of horloges."
+      }
+    },
+    "interpretation": {
+      "low": "Laag",
+      "normal": "Normaal",
+      "excellent": "Uitstekend",
+      "elevated": "Verhoogd"
+    }
+  },
+  "strength": {
+    "title": "Kracht leeftijd",
+    "about": {
+      "whatIsHeader": "Wat is de Kracht Gezondheid",
+      "whatIsDescription": "Een meting van de gezondheid van je spieren vergeleken met anderen van jouw leeftijd.",
+      "howCalculatedHeader": "Hoe het wordt berekend",
+      "howCalculatedDescription": "We analyseren (handmatig of automatisch met een EGYM-toestel) je resultaten op alle krachtoefeningen om te kunnen zien hoe sterk je bent en of de spieren in je bovenlichaam, romp en onderlichaam in balans zijn.",
+      "theKeyMetric": "De meeteenheid is de verhouding tussen je kracht en je lichaamsgewicht.",
+      "theIdealRatio": "De ideale verhouding hangt af van je geslacht en wat voor sport je doet."
+    },
+    "historyTitle": "Sterkte Leeftijd Geschiedenis",
+    "takeStrengthTest": "Doe een krachtoefening",
+    "measurementTrackingDescription": "Probeer de oefening zo veel mogelijk herhalingen op een gecontroleerde manier uit te voeren met het beste gewicht dat je kunt. Het aantal herhalingen dat je met dat gewicht voltooit, wordt gebruikt om je maximale krachtmeting te schatten.",
+    "measurementCalculatedDescription": "De volgende waarde geeft aan hoeveel kracht je hebt verbruikt tijdens de test.",
+    "measurementTrackSuccess": "Je resultaten zijn succesvol opgeslagen",
+    "muscleBalance": {
+      "emptyState": {
+        "title": "Ontdek je kracht",
+        "text": "Doe een krachttest voor een analyse van je spierdisbalans"
+      },
+      "greatWork": "Goed gedaan!",
+      "statusImbalanced": "Uit balans",
+      "statusBalanced": "In balans",
+      "imbalanced": {
+        "abs": "Train je buikspieren wat meer",
+        "biceps": "Train je biceps wat meer",
+        "calves": "Train je kuiten wat meer",
+        "chest": "Train je borst wat meer",
+        "hamstring": "Train je achterste bovenbeenspieren wat meer",
+        "inner_hips": "Train je binnenste heupen wat meer",
+        "lats": "Train je grote rugspieren wat meer",
+        "left_gluteus": "Train je linker bilspier wat meer",
+        "left_torso": "Train je linker schuine buikspieren wat meer",
+        "lower_back": "Train je onderrug wat meer",
+        "outer_hips": "Train je buitenste heupen wat meer",
+        "quadriceps": "Train je voorste bovenbeenspieren wat meer",
+        "right_gluteus": "Train je rechter bilspier wat meer",
+        "right_torso": "Train je rechter schuine buikspieren wat meer",
+        "shoulder": "Train je schouders wat meer",
+        "thighs": "Train je dijen wat meer",
+        "triceps": "Train je triceps wat meer",
+        "upper_back": "Train je bovenrug wat meer",
+        "rear_shoulder": "Focus meer op de achterzijde van je shoulders"
+      },
+      "muscle": {
+        "abs": "Buikspieren",
+        "biceps": "Biceps",
+        "calves": "Kuiten",
+        "chest": "Borst",
+        "hamstring": "Achterste bovenbeenspier",
+        "inner_hips": "Binnenste heupen",
+        "lats": "Grote rugspieren",
+        "left_gluteus": "Linker bilspier",
+        "left_torso": "Schuine buikspieren links",
+        "lower_back": "Onderrug",
+        "outer_hips": "Buitenste heupen",
+        "quadriceps": "Voorste bovenbeenspieren",
+        "right_gluteus": "Rechter bilspier",
+        "right_torso": "Schuine buikspieren rechts",
+        "shoulder": "Schouder",
+        "thighs": "Dijen",
+        "triceps": "Triceps",
+        "upper_back": "Bovenrug",
+        "rear_shoulder": "Achterzijde schouder"
+      },
+      "guidanceTextBullet3": "Om de krachttest te doen, doe je de aanbevolen oefeningen voor het bovenlichaam, de core en het onderlichaam.",
+      "guidanceTextBullet2": "Je kunt de extra oefeningen vinden door op de knop \"+ Toon meer\" te drukken.",
+      "guidanceTextBullet1": "Probeer zoveel mogelijk reps gecontroleerd uit te voeren met het beste gewicht dat je kunt."
+    }
+  },
+  "muscleBalance": {
+    "muscleBalance": "Spierbalans",
+    "muscleBalanceAnalysis": "Spelbalansanalyse"
+  },
+  "flexibility": {
+    "title": "Flexibiliteit Leeftijd",
+    "about": {
+      "whatIsHeader": "Wat is de Flexibiliteitsleeftijd",
+      "whatIsDescription": "Een evaluatie of je gewrichten een gezond bewegingsbereik hebben in vergelijking met je werkelijke leeftijd.",
+      "importantNoticeHeader": "Belangrijke kennisgeving",
+      "importantNoticeDescription": "Flexibiliteit Leeftijd is gevuld met gegevens van Fitness Hub. Volg de instructies op Fitness Hub, slaag voor flexibiliteitstests en krijg inzicht in uw flexibiliteitsgezondheid.",
+      "howCalculatedHeader": "Hoe het wordt berekend",
+      "howCalculatedDescription": "We analyseren alle resultaten van de flexibiliteitstests op verschillende lichaamsdelen. De resultaten worden vergeleken met de gemiddelde flexibiliteit van andere EGYM-gebruikers.",
+      "recommendationDescription": "Gebruik deze informatie om met je trainer te overleggen over je trainingsdoelen en mogelijke aanpassing van je trainingsschema."
+    },
+    "historyTitle": "Flexibiliteit Leeftijd Geschiedenis",
+    "recommendations": "Vraag je trainer voor meer informatie over de oefeningen."
+  },
+  "cardio": {
+    "title": "Cardio leeftijd",
+    "historyTitle": "Cardio Leeftijd Geschiedenis",
+    "about": {
+      "whatIsHeader": "Wat is de cardio-leeftijd",
+      "whatIsDescription": "Evalueert hoe goed je cardiogezondheid is ontwikkeld door naar je cardioprestatieniveau te kijken en dit te vergelijken met een gemiddelde persoon van je echte leeftijd.",
+      "howCalculatedHeader": "Hoe het wordt berekend",
+      "howCalculatedDescription": "We nemen je cardiovasculaire capaciteit en prestaties op een hoge en lage intensiteit met VO2max metriek en correleren dit met de bloeddruk en hartslag in rust. VO2max wordt algemeen beschouwd als de beste indicator van cardiorespiratoire fitheid.",
+      "recommendationDescription": "VO2max kan het risico op vroegtijdig overlijden zelfs beter voorspellen dan sommige traditionele risicofactoren zoals overgewicht, hoog cholesterolgehalte of roken. Het goede nieuws is dat je, in tegenstelling tot je werkelijke leeftijd, je Cardio Bio Age kunt verlagen door regelmatig te sporten. Wil je jonger worden? Blijf trainen.",
+      "restingHeartRate": "Rusthartslag",
+      "restingHeartRateDescription": "Een normale hartslag in rust voor volwassenen ligt tussen 60 en 100 slagen per minuut.",
+      "bloodPressure": "Bloeddruk",
+      "bloodPressureDescription": "De systolische bloeddruk is < 120 mmHg. De diastolische bloeddruk is < 80 mmHg.",
+      "vo2MAX": "VO2max",
+      "vo2MAXDescription": "Hoe hoger je VO2max, hoe meer zuurstof je lichaam kan gebruiken en hoe beter je cardiovasculaire en uithoudingsvermogen.",
+      "normalRange": "Normaal bereik",
+      "normalRangeMen": "Mannen: 40ml/kg/min",
+      "normalRangeWomen": "Vrouwen: 35 ml/kg/min",
+      "heartRate": "Hartslag"
+    },
+    "trackBloodPressure": {
+      "diastolicGreaterThanSystolic": "diastolische druk kan niet groter zijn dan systolische"
+    }
+  },
+  "myBioage": "Mijn BioAge",
+  "connectedApps": {
+    "syncInProgress": "Synchronisatie bezig",
+    "syncInProgressDescription": "Het kan een paar minuten duren om je gegevens te synchroniseren, kom later nog eens terug.",
+    "yourDataIsAlwaysSecure": "Uw gegevens zijn altijd veilig",
+    "connectYourData": "Verbind uw gegevens",
+    "connectHealthData": "Gezondheidsgegevens verbinden",
+    "cardio": {
+      "sharingDataHelpsDetermineCardioAge": "Door uw {{appName}} gegevens te delen met EGYM, zoals <0>{{heartRate}}</0> en <1>{{vo2Max}}</1>, kunt u ons helpen uw cardioleeftijd te bepalen",
+      "sharingHealthAppData": "Het delen van je<br /> {{healthAppName}} gegevens helpt bij het bepalen van je cardioleeftijd."
+    },
+    "syncError": "Het lijkt erop dat je eerder {{appName}} -machtigingen hebt afgewezen. Om ze weer in te schakelen, ga je naar {{appName}} -machtigingen en sta je toegang toe"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "measurements": {
+    "types": {
+      "HAMSTRING_EXTENSION_DEGREE": {
+        "label": "Hamstring",
+        "description": "The dorsal chain consists of the calf muscles and hamstrings. Monotonous positions like sitting or biking can cause higher tension and a limited flexibility which results in a bad posture and can lead to lower back pain."
+      }
+    },
+    "interpretation": {
+      "low": "Low",
+      "normal": "Normal",
+      "excellent": "Excellent",
+      "elevated": "Elevated"
+    }
+  }
+}

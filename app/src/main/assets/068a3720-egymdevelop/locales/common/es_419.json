@@ -1,0 +1,25 @@
+{
+  "auth": {
+    "healthConsentToggleDescription": "Acepto que EGYM procese mis datos de entrenamiento y forma física (datos de salud) con el fin de utilizar los servicios de EGYM. Para más información sobre el tratamiento de mis datos personales, incluidas las categorías de datos de salud del consumidor recopilados o compartidos, véanse las declaraciones {{0}}. Reconozco que puedo revocar mi consentimiento en cualquier momento. Reconozco que revocar mi consentimiento significa que EGYM no podrá prestar los servicios y eliminará mi cuenta."
+  },
+  "common": {
+    "restTime": "Descanso",
+    "discard": "Descartar",
+    "saveChanges": "¿Guardar cambios?",
+    "saveChangesDesc": "Tus cambios se perderán si no los guardas.",
+    "details": "Detalles"
+  },
+  "recommendedWeightGuidance": {
+    "EACH_SIDE": "por cara",
+    "ADDED_WEIGHT": "peso añadido",
+    "BAR_PLATES": "barra + placas",
+    "TOTAL_WEIGHT": "total"
+  },
+  "units": {
+    "week": "semana"
+  },
+  "lateralityGuidance": {
+    "UNILATERAL": "por cara"
+  },
+  "data_privacy": "Privacidad de datos"
+}

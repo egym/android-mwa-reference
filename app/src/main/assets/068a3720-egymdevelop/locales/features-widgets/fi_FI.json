@@ -1,0 +1,13 @@
+{
+  "viewAll": "Näytä kaikki",
+  "locationsModal": {
+    "title": "Etsi sijainti",
+    "searchLocationPlaceholder": "Etsi käytettävissä olevia sijainteja",
+    "showXLocations_one": "Näytä {{count}} sijainti",
+    "showXLocations_other": "Näytä {{count}} sijainnit",
+    "emptyState": {
+      "title": "Paikkoja ei löytynyt",
+      "description": "Kokeile toista hakusanaa."
+    }
+  }
+}

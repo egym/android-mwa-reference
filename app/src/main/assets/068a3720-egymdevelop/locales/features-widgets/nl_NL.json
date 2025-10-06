@@ -1,0 +1,13 @@
+{
+  "viewAll": "Alles bekijken",
+  "locationsModal": {
+    "title": "Club zoeken",
+    "searchLocationPlaceholder": "Beschikbare locaties zoeken",
+    "showXLocations_one": "Toon {{count}} locatie",
+    "showXLocations_other": "Toon {{count}} locaties",
+    "emptyState": {
+      "title": "Geen locaties gevonden",
+      "description": "Probeer een andere zoekterm."
+    }
+  }
+}

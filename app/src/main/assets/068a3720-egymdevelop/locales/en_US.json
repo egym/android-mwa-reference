@@ -1,0 +1,404 @@
+{
+  "homepageTitle": "BioAge",
+  "auth": {
+    "signupTitle": "What is BioAge?",
+    "loginTitle": "Assess your BioAge and connect to EGYM equipment with EGYM ID.",
+    "signupDescription": "BioAge is a comprehensive health and fitness indicator that combines a wide range of key measurements to create a BioAge that can be compared to your actual physical age.",
+    "signupDescription2": "You’ll be able to understand how your exercise routine is positively impacting your fitness and health as well as tracking progress."
+  },
+  "bodyRegions": {
+    "title": "Body Regions",
+    "upperBody": "Upper Body",
+    "core": "Core",
+    "lowerBody": "Lower Body"
+  },
+  "home": {
+    "assistance": "Assistance",
+    "categories": {
+      "title": "Categories",
+      "strength": "Strength",
+      "metabolic": "Metabolism",
+      "flexibility": "Flexibility",
+      "cardio": "Cardio"
+    },
+    "information": {
+      "title": "Information",
+      "subtitle": "Virtual Assistance Help",
+      "text": "Get more information about BioAge and tips on its usage",
+      "readMore": "Read More"
+    },
+    "analysisEmptyState": {
+      "title": "Discover your BioAge",
+      "text": "Calculated based on the maximum strength results performed on EGYM machines or added manually in the app. To improve BioAge over time, use muscle imbalances analysis to adjust your trainings in the most effective way."
+    }
+  },
+  "about": {
+    "title": "What is the BioAge",
+    "topDescription": "A measurement to help you understand how your fitness performance matches up with the average person your age.",
+    "subheader": "How BioAge is Calculated",
+    "howToBullet1": "A lower BioAge means a greater level of fitness.",
+    "howToBullet2": "The best possible BioAge is 21.",
+    "recommendationsBullet1": "To make progress or stay healthy: train often, eat well and stay hydrated.",
+    "recommendationsBullet2": "Most importantly though, enjoy your life!",
+    "gotItButton": "Got it",
+    "recommendationsBullet": "Use this information to talk to your trainer about training goals and possible exercise adaptation in your training plan."
+  },
+  "assistance": {
+    "title": "How to Use Assistance",
+    "text": "Click on the <0></0> button on the Strength, Flexibility, Metabolic, and Cardio Age screens to read more information about them."
+  },
+  "chart": {
+    "noDataForThisPeriod": "No data for this time period",
+    "emptyStateText": "The historical data graph will appear here once the data is available",
+    "totalBioageDescription": "The biological age represents the current health and performance. It is the average of the muscle age, cardio age and metabolic age. Normal values match with the real age and the younger the biological age is the better (best value is 21).",
+    "ageYearsYaxisLabel": "age (yrs)",
+    "metabolicAgeDescription": "The metabolic age is calculated using the body fat, waist to hip ratio and body-mass-index. The metabolic age gives you an overview over the relation between your height, weight and body fat."
+  },
+  "common": {
+    "realAge": "Real age {{count}} years",
+    "weight": "Weight",
+    "height": "Height",
+    "waist": "Waist",
+    "hip": "Hip"
+  },
+  "metabolic": {
+    "title": "Metabolic Age",
+    "about": {
+      "whatIsHeader": "What is the Metabolic Age",
+      "whatIsDescription": "An evaluation of how well your Metabolic health is developed by analyzing body composition in comparison to an average person of your actual age.",
+      "howCalculatedHeader": "How It’s Calculated",
+      "howCalculatedDescription": "We analyze the relation of various parameters of your body composition, such as body fat percentage, body mass index, and waist-hip ratio.",
+      "bodyFatDescription": "Your body fat percentage in relation to your total body mass. You can get this result by conducting a test on a specific Body Analyzer or by using a home sale that supports this metric. Average for Men: ~20; Average for Women: ~27",
+      "bodyMassDescription": "The BMI relates your body weight to your height and accurately estimated your general body composition. A healthy BMI ranges between 18.5 and 25",
+      "waistHipDescription": "The Waist-Hip Ratio compares the waist and the hip circumference and provides insight into your fat distribution. The lower the ratio, the lower is the risk of cardiovascular diseases. Average for Men: ~0.92; Average for Women: ~0.83"
+    },
+    "historyTitle": "Metabolic Age History"
+  },
+  "measurements": {
+    "title": "Measurements",
+    "about": "About {{measurementName}}",
+    "howToMeasure": "How to measure {{measurementName}}",
+    "types": {
+      "BMI": {
+        "label": "Body Mass Index",
+        "description": "A common measurement to classify the body weight in relation to the body height. Nevertheless, the meaningfulness is limited, because people with a lot of muscle mass can have a BMI greater than 25 and still be healthy. For better insights look at the body composition (fat, muscles,...). Can be positively influenced by physical activity and healthy nutrition.",
+        "howToMeasureDescription": "Add your latest height and weight. To keep the BMI precise, keep your weight value up to date."
+      },
+      "BODY_FAT": {
+        "label": "Body Fat",
+        "description": "A good indicator to classify your body composition. Too high body fat percentage is a basic health risk indicator. Excellent body fat levels uncover the \"six pack\". Can be positively influenced by physical activity and healthy nutrition.",
+        "howToMeasureDescription": "The best results are achieved with a body analyser, please contact your facility for conducting it. Other options are the use of a home scale with a ‘Body Composition’ feature or an online calculator to measure estimated fat percentage by measuring circumferences of your body parts."
+      },
+      "WAIST_TO_HIP_RATIO": {
+        "label": "Waist-Hip Ratio",
+        "description": "Common indicator for cardiovascular health risks by looking at the fat distribution which is mainly genetically determined. Body types carrying more fat in the middle torso area correlate to a higher risk. For those body types, it is even more important to stay lean in general. A healthy nutrition and regular exercise helps.",
+        "howToMeasureDescription": "Use a tape measure to check the narrowest circumference of your waist (just above the belly button)."
+      },
+      "WAIST_CM": {
+        "label": "Waist Circumference",
+        "description": "Your individual midriff diameter. Negatively influenced by visceral fat and a result of your morphological type."
+      },
+      "HIP_CM": {
+        "label": "Hip Circumference",
+        "description": "Your individual hip diameter, measured at the maximum buttocks area. Result of your body composition."
+      },
+      "WEIGHT_KG": {
+        "label": "Weight",
+        "description": "The body weight alone has only a very limited value for health. For real insights look at the body composition (fat, muscles,...).  In general a high body weight creates a higher impact on joints and tendons. You need to build more muscle strength to compensate this impacts."
+      },
+      "FAT_MASS_INDEX": {
+        "label": "Fat Mass Index",
+        "description": "Fat Mass Index puts fat mass in relation to the body height. It is a very good indicator to classify your body composition, superior to body fat %. Too high values are a basic health risk indicator. Excellent values a sign for good aesthetics  uncover the \"six pack\". Can be positively influenced by physical activity and healthy nutrition."
+      },
+      "SKELETAL_MUSCLE_MASS": {
+        "label": "Skeletal Muscle Mass",
+        "description": "Muscles are important for life quality. Too low values are a risk indicator for injuries and frailty (Sarcopenia). Healthy muscles regulate your immune system, reduce inflammations and improve metabolism (Myokines). Positively influenced by strength training."
+      },
+      "BODY_MUSCLE_PERCENTS": {
+        "label": "Muscle Mass",
+        "description": "Muscles are important for life quality. Too low values are a risk indicator for injuries and frailty (Sarcopenia). Healthy muscles regulate your immune system, reduce inflammations and improve metabolism (Myokines). Positively influenced by strength training."
+      },
+      "FAT_FREE_MASS": {
+        "label": "Fat Free Mass",
+        "description": "Sum of muscle, bone, inner organ, water, tendon, blood weight. High values correlated to an aesthetic body definition and too low values with a low fitness level. Positively influenced by strength training and healthy nutrition."
+      },
+      "FAT_FREE_MASS_INDEX": {
+        "label": "Fat Free Mass Index",
+        "description": "Fat Free Mass Index is an athletic indicator. High values correlated to aesthetic body definition and too low values with a low fitness level. Positively influenced by strength training and healthy nutrition."
+      },
+      "VISCERAL_FAT": {
+        "label": "Visceral Fat",
+        "description": "Visceral fat is the fat in your abdominal cavity around the inner organs. High values are an risk factor for metabolic diseases and inflammatory processes. Can be significantly reduced by fitness training."
+      },
+      "VISCERAL_FAT_LEVEL_CM2": {
+        "label": "Visceral Fat Level",
+        "description": "Visceral fat is the fat in your abdominal cavity around the inner organs. High values are an risk factor for metabolic diseases and inflammatory processes. Can be significantly reduced by fitness training."
+      },
+      "VISCERAL_FAT_RATING": {
+        "label": "Visceral Fat Rating",
+        "description": "Visceral fat is the fat in your abdominal cavity around the inner organs. High values are an risk factor for metabolic diseases and inflammatory processes. Can be significantly reduced by fitness training."
+      },
+      "BODY_WATER": {
+        "label": "Body Water",
+        "description": "Solvent, transport agent, nutrient resource and temperature regulator. Dehydration is a dangerous health risk and quite common. Too much water intake is less common but can also be a problem under certain conditions."
+      },
+      "BODY_PROTEIN_KG": {
+        "label": "Body Protein",
+        "description": "High correlation to muscle and collagen mass. Amino acid pool which are life basis substances, needed for all body repair mechanism and healing process. Low protein status suppresses your immune system and establish a weak health status. Positively influenced by strength training and protein rich food."
+      },
+      "BODY_MINERALS_KG": {
+        "label": "Minerals",
+        "description": "Parameter for your bone stability. Too low values are associated with osteoporosis which increases the risk of bone fractures. Strength training is an important prophylaxis, best combined with calcium and vitamin D supplements."
+      },
+      "EXTRA_CELLULAR_WATER": {
+        "label": "Extra Cellular Water",
+        "description": "The fraction of body water represented by all fluid components in your cardiovascular system. It is your metabolic transport medium. Too low values indicate unhealthy dehydration. Endurance training can improve your body water balance."
+      },
+      "INTRA_CELLULAR_WATER": {
+        "label": "Intra Cellular Water",
+        "description": "The fraction of body water represented in all your body cells which are your batteries. The intracellular water fraction is your battery charger and detoxificator. Low status indicates unhealthy dehydration, because dry batteries do not work. Sportive training improves your cellular water state."
+      },
+      "SOFT_LEAN_MASS_KG": {
+        "label": "Soft Lean Mass",
+        "description": "Sum of your total body water, protein and non-osseous minerals. Low values indicate potential unhealthy alimentation conditions. Beside genetic predisposition, a result of individual nutrition and lifestyle conditions."
+      },
+      "SEGMENTAL_LEAN_TRUNK_KG": {
+        "label": "Lean Mass Trunk",
+        "description": "Separated trunk lean mass. Low values indicate weak segmental status. Focus on a healthy muscle mass in your trunk. Your trunk is the center of your body and plays a crucial role in your stability of your back. Can we improvable by abdominal or back training and healthy nutrition."
+      },
+      "SEGMENTAL_MUSCLE_TRUNK_KG": {
+        "label": "Muscles Trunk",
+        "description": "Separated trunk muscle mass. Low values indicate weak segmental status. Focus on a healthy muscle mass in your trunk. Your trunk is the center of your body and plays a crucial role in your stability of your back. Can be improvable by abdominal or back training."
+      },
+      "TOTAL_ENERGY_EXPENDITURE": {
+        "label": "Total Energy Expenditure",
+        "description": "This is the daily energy required by your body. It is determined by your resting energy expenditure (~70%) and the amount of daily activity (~30%). Positively influenced by an increase in regular physical activity and increase in resting energy expenditure."
+      },
+      "RESTING_ENERGY_EXPENDITURE": {
+        "label": "Resting Energy Expenditure",
+        "description": "This is the daily energy required by your body to perform the most basic functions when your body is at rest, like breathing or circulating blood. It is influenced by many factors — including age, gender, muscle mass and also the regeneration level after physical activity. Positively influenced by strength training and intense cardio workouts."
+      },
+      "BODY_PHASE_ANGLE": {
+        "label": "Phase Angle",
+        "description": "Phase angle is an indicator of body cell health and integrity. A high phase angle indicates intact cell membranes. It goes up when you are healthy and down when you are sick. It also goes down as you age. When you increase your phase angle, you slow down aging. The phase angle can be best improved by an increase in fat free mass relative to body weight."
+      },
+      "BASAL_METABOLIC_RATE_KJ": {
+        "label": "Basal Metabolic Rate",
+        "description": "This is the daily energy required by your body to perform the most basic functions when your body is at rest, like breathing or circulating blood. It is influenced by many factors — including age, gender, muscle mass and also the regeneration level after physical activity. Positively influenced by strength training and intense cardio workouts."
+      },
+      "SEGMENTAL_LEAN_ARM_KG": {
+        "label": "Lean Mass Arm",
+        "description": "Separated arm lean mass. Low values indicate weak segmental status. Focus to balance your right and left side to avoid muscular imbalances. Can be improved by single-arm training and healthy nutrition."
+      },
+      "SEGMENTAL_LEAN_LEG_KG": {
+        "label": "Lean Mass Leg",
+        "description": "Separated leg lean mass. Low values indicate weak segmental status. Focus to balance your right and left side to avoid muscular imbalances. Can be improved by single-leg training and healthy nutrition."
+      },
+      "SEGMENTAL_MUSCLE_ARM_KG": {
+        "label": "Muscles Arm",
+        "description": "Separated arm muscle mass. Low values indicate weak segmental status. Focus to balance your right and left side to avoid muscular imbalances. Can be improved by single arm biceps or triceps training."
+      },
+      "SEGMENTAL_MUSCLE_LEG_KG": {
+        "label": "Muscles Leg",
+        "description": "Separated leg muscle mass. Low values indicate weak segmental status. Focus to balance your right and left side to avoid muscular imbalances. Can be improved by single-leg training."
+      },
+      "SEGMENTAL_FAT_TRUNK_KG": {
+        "label": "Trunk Fat Mass",
+        "description": "Separated trunk fat mass. Low values indicate weak segmental status. Focus on a healthy fat mass in your trunk. Your trunk is the center of your body and plays a crucial role in your stability of your back. Can be improvable by abdominal or back training and healthy nutrition."
+      },
+      "SEGMENTAL_FAT_LEG_KG": {
+        "label": "Leg Fat Mass",
+        "description": "Separated leg fat mass. Low values indicate weak segmental status. Focus to balance your right and left side to avoid muscular imbalances. Can be improved by single-leg training and healthy nutrition."
+      },
+      "SEGMENTAL_FAT_ARM_KG": {
+        "label": "Arm Fat Mass",
+        "description": "Separated arm fat mass. Low values indicate weak segmental status. Focus to balance your right and left side to avoid muscular imbalances. Can be improved by single-arm training and healthy nutrition."
+      },
+      "TORSO_LATERAL_FLEXION_DEGREE": {
+        "label": "Lat Flex",
+        "description": "The lateral torso muscles bend, rotate and stabilize your core. An increased muscle stiffness and limited flexibility can cause lumbar spine pain. Additionally, the ability of the diaphragm and the chest to expand is limited which inhibits normal breathing."
+      },
+      "NECK_LATERAL_FLEXION_DEGREE": {
+        "label": "Neck",
+        "description": "The lateral neck muscles stabilize and move your head. Monotonous positions like working on a PC for a long time and also stress result in decreased flexibility which can lead to headache, tension pain, jaw clenching and pain in the cervical spine."
+      },
+      "HIP_EXTENSION_DEGREE": {
+        "label": "Hip",
+        "description": "The hip flexor muscles control your posture during movements like walking and running. Long sitting in a contracted position causes the muscles to shorten which negatively affects your posture and ultimately leads to lumbar spine pain."
+      },
+      "CHEST_EXTENSION_DEGREE": {
+        "label": "Chest",
+        "description": "The chest muscles move your upper arm and stabilize your shoulder joint. Spending long time in a forward position like during working on a PC shortens the chest muscles which can lead to cervical spine pain, shoulder problems and inhibits the breathing function"
+      },
+      "HAMSTRING_EXTENSION_DEGREE": {
+        "label": "Hamstring",
+        "description": "The dorsal chain consists of the calf muscles and hamstrings. Monotonous positions like sitting or biking can cause higher tension and a limited flexibility which results in a bad posture and can lead to lower back pain."
+      },
+      "RESTING_HEART_RATE": {
+        "label": "Resting Heart Rate",
+        "description": "Resting heart rate is the number of times heart beats per minute when you are at rest — such as when you are relaxed, sitting or lying down.You can simply assess your Resting Heart rate via counting the heart beats during 15 sec and multiply this value by 4. You can find your heart beat either at the wrist or your carotid artery. A normal value for the resting Heart Rate ranges between 50 and 80 beats per minute. An elevated resting Heart rate is associated with a higher mortality rate.",
+        "howtoMeasure": "You can simply assess your Resting Heart rate via counting the heart beats during 15 sec and multiply this value by 4. You can find your heart beat either at the wrist or your carotid artery. A normal value for the resting Heart Rate ranges between 50 and 80 beats per minute. An elevated resting Heart rate is associated with a higher mortality rate."
+      },
+      "BLOOD_PRESSURE_MMHG": {
+        "label": "Blood Pressure",
+        "description": "The Blood Pressure reflects the general health of the cardiovascular system. A high Blood Pressure can be an indicator of underlying diseases and may have long-term effects.A normal Blood Pressure is around 120 systolic and 80 diastolic.",
+        "howtoMeasureListHeader": "Blood Pressure is measured in millimeters of mercury (mmHg) and is given as 2 numbers:",
+        "howtoMeasureBullet1": "systolic pressure – the pressure when your heart pushes blood out around your body",
+        "howtoMeasureBullet2": "diastolic pressure – the pressure when your heart rests between beats and blood is pushed around your heart",
+        "howtoMeasureListFooter": "The highest number is always the systolic pressure and it's always given first. For example, a blood pressure given as \"120 over 80\" or 120/80mmHg means a systolic pressure of 120 mmHg and a diastolic pressure of 80 mmHg.",
+        "howtoMeasureFooter": "You can assess your Blood Pressure with Blood Pressure monitor.",
+        "howtoMeasureHint": "Don't smoke or drink caffeinated beverages or exercise within 30 minutes before measuring your blood pressure. Sit with your back straight and supported. Don't take the measurement over clothes."
+      },
+      "VO2MAX": {
+        "label": "VO2max",
+        "description": "The VO2max is a direct measure of your cardiovascular capacity and reflects the ability of your body to work out a higher intensities for a long time. You can access your VO2max via the cardio test and with sport devices or watches.",
+        "howtoMeasureLine1": "VO2max is a direct measure of your cardiovascular capacity and reflects the ability of your body to work out a higher intensities for a long time.",
+        "howtoMeasureLine2": "VO2max is measured in milliliters of oxygen used in one minute per kilogram of body weight (mL/kg/min).",
+        "howtoMeasureLine3": "You can assess your VO2max via the cardio test and with sport devices or watches."
+      }
+    },
+    "interpretation": {
+      "low": "Low",
+      "normal": "Normal",
+      "excellent": "Excellent",
+      "elevated": "Elevated"
+    },
+    "deleteConfirmation": {
+      "title": "Delete Measurement",
+      "description": "Are you sure you want to delete the measurement?",
+      "healthAppWarning": "Delete measurements from {{healthAppName}} or the third-party app to prevent them from showing up again.",
+      "deleteButton": "Delete Measurement",
+      "cancelButton": "Cancel",
+      "guidanceText": "Swipe left to delete the measurement"
+    }
+  },
+  "strength": {
+    "title": "Strength Age",
+    "about": {
+      "whatIsHeader": "What is the Strength Health",
+      "whatIsDescription": "A measurement of how your muscle system is performing when compared to an average person of your age.",
+      "howCalculatedHeader": "How It’s Calculated",
+      "howCalculatedDescription": "We analyze the results from all max strength (manual or EGYM machine based) to identify your strength capabilities and muscle imbalances in 3 body zones (upper body, core, lower body).",
+      "theKeyMetric": "The key metric is the ratio of your strength to your body weight.",
+      "theIdealRatio": "The ideal ratio depends on your gender and what exercise you are performing."
+    },
+    "historyTitle": "Strength Age History",
+    "takeStrengthTest": "Take Strength Test",
+    "measurementTrackingDescription": "Try to perform the exercise completing as many reps as possible in a controlled manner with the best weight you can. The number of reps you complete at that weight will be used to estimate your maximum strength measurement.",
+    "measurementCalculatedDescription": "The following value represents the amount of strength you expended during the test.",
+    "measurementTrackSuccess": "Your results have been successfully recorded",
+    "muscleBalance": {
+      "emptyState": {
+        "title": "Discover your strength",
+        "text": "Take a strength test to get your muscle imbalance analysis"
+      },
+      "greatWork": "Great Work!",
+      "statusImbalanced": "Imbalanced",
+      "statusBalanced": "Balanced",
+      "imbalanced": {
+        "abs": "Focus more on your abs",
+        "biceps": "Focus more on your biceps",
+        "calves": "Focus more on your calves",
+        "chest": "Focus more on your chest",
+        "hamstring": "Focus more on your hamstring",
+        "inner_hips": "Focus more on your inner hips",
+        "lats": "Focus more on your lats",
+        "left_gluteus": "Focus more on your left gluteus",
+        "left_torso": "Focus more on your left torso",
+        "lower_back": "Focus more on your lower back",
+        "outer_hips": "Focus more on your outer hips",
+        "quadriceps": "Focus more on your quadriceps",
+        "right_gluteus": "Focus more on your right gluteus",
+        "right_torso": "Focus more on your right torso",
+        "shoulder": "Focus more on your shoulders",
+        "thighs": "Focus more on your thighs",
+        "triceps": "Focus more on your triceps",
+        "upper_back": "Focus more on your upper back",
+        "rear_shoulder": "Focus more on your rear shoulders"
+      },
+      "muscle": {
+        "abs": "Abs",
+        "biceps": "Biceps",
+        "calves": "Calves",
+        "chest": "Chest",
+        "hamstring": "Hamstring",
+        "inner_hips": "Inner Hips",
+        "lats": "Lats",
+        "left_gluteus": "Left Gluteus",
+        "left_torso": "Left Torso",
+        "lower_back": "Lower Back",
+        "outer_hips": "Outer Hips",
+        "quadriceps": "Quadriceps",
+        "right_gluteus": "Right Gluteus",
+        "right_torso": "Right Torso",
+        "shoulder": "Shoulder",
+        "thighs": "Thighs",
+        "triceps": "Triceps",
+        "upper_back": "Upper Back",
+        "rear_shoulder": "Rear Shoulder"
+      },
+      "guidanceTextBullet3": "To take the strength test, complete the recommended exercises for upper body, core and lower body.",
+      "guidanceTextBullet2": "You can find the additional exercises by pressing the \"+ Show more\" button.",
+      "guidanceTextBullet1": "Try to perform the exercise completing as many reps as possible in a controlled manner with the best weight you can."
+    }
+  },
+  "muscleBalance": {
+    "muscleBalance": "Muscle Balance",
+    "muscleBalanceAnalysis": "Muscle Balance Analysis"
+  },
+  "flexibility": {
+    "title": "Flexibility Age",
+    "about": {
+      "whatIsHeader": "What is the Flexibility Age",
+      "whatIsDescription": "An evaluation whether your joints have a healthy range of motion compared to your real age.",
+      "importantNoticeHeader": "Important Notice",
+      "importantNoticeDescription": "Flexibility Age is filled with data from Fitness Hub. Follow instructions on Fitness Hub, pass flexibility tests and get insights on your Flexibility Health.",
+      "howCalculatedHeader": "How It’s Calculated",
+      "howCalculatedDescription": "We analyze all flexibility test results across various body parts. Results are compared with the average flexibility of other EGYM users.",
+      "recommendationDescription": "Use this information to talk to your trainer about training goals and possible exercise adaptation in your training plan."
+    },
+    "historyTitle": "Flexibility Age History",
+    "recommendations": "For more information about the exercises ask your trainer."
+  },
+  "cardio": {
+    "title": "Cardio Age",
+    "historyTitle": "Cardio Age History",
+    "about": {
+      "whatIsHeader": "What is the Cardio Age",
+      "whatIsDescription": "Evaluates how well your Cardio health is developed by looking at your cardio performance level and comparing it to an average person of your real age.",
+      "howCalculatedHeader": "How It’s Calculated",
+      "howCalculatedDescription": "We take your cardiovascular capacity and performance on a high and low intensities with VO2max metric and correlating it with the blood pressure and resting heart rate. VO2max is generally regarded as the best indicator of cardiorespiratory fitness.",
+      "recommendationDescription": "VO2max can predict risk of early death even better than some traditional risk factors like being overweight, high cholesterol, or smoking. The good news is that unlike your actual age, you can lower your Cardio Bio Age with the regular sports. Want to get younger? Keep training.",
+      "restingHeartRate": "Resting Heart Rate",
+      "restingHeartRateDescription": "A normal resting heart rate for adults ranges from 60 to 100 beats per minute.",
+      "bloodPressure": "Blood Pressure",
+      "bloodPressureDescription": "Systolic blood pressure is < 120 mmHg.Diastolic blood pressure is < 80 mmHg.",
+      "vo2MAX": "VO2max",
+      "vo2MAXDescription": "The higher your VO2max, the more oxygen your body can use and the better your cardiovascular and endurance.",
+      "normalRange": "Normal range",
+      "normalRangeMen": "Men: 40ml/kg/min",
+      "normalRangeWomen": "Women: 35 ml/kg/min",
+      "heartRate": "Heart Rate"
+    },
+    "trackBloodPressure": {
+      "diastolicGreaterThanSystolic": "diastolic pressure can't be greater than systolic"
+    }
+  },
+  "myBioage": "My BioAge",
+  "connectedApps": {
+    "syncInProgress": "Sync in progress",
+    "syncInProgressDescription": "It might take couple of minutes to sync your data, please come back later",
+    "yourDataIsAlwaysSecure": "Your data is always secure",
+    "connectYourData": "Connect Your Data",
+    "connectHealthData": "Connect Health Data",
+    "cardio": {
+      "sharingDataHelpsDetermineCardioAge": "By sharing your {{appName}} data with EGYM, such as <0>{{heartRate}}</0> and <1>{{vo2Max}}</1>, you can help us determine your cardio age",
+      "sharingHealthAppData": "Sharing your<br /> {{healthAppName}} data helps determine your cardio age."
+    },
+    "syncError": "Seems like you rejected {{appName}} permissions before. To turn them back on go to {{appName}} permissions and allow access"
+  },
+  "updateProfileModal": {
+    "description": "Add your gender and date of birth to get accurate results.",
+    "warning": "Minimum age of 13 years is required"
+  }
+}

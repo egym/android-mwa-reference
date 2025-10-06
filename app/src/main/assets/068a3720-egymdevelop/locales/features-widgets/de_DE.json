@@ -1,0 +1,13 @@
+{
+  "viewAll": "Alle ansehen",
+  "locationsModal": {
+    "title": "Standort finden",
+    "searchLocationPlaceholder": "Verfügbare Standorte suchen",
+    "showXLocations_one": "Zeige {{count}} Standort",
+    "showXLocations_other": "Zeige {{count}} Standorte",
+    "emptyState": {
+      "title": "Keine Standorte gefunden",
+      "description": "Bitte versuche einen anderen Suchbegriff."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "auth": {
+    "healthConsentToggleDescription": "I agree to the processing of my training and fitness data (health data) by EGYM for the purpose of using the EGYM services. For further information regarding the processing of my personal data, including the categories of consumer health data collected or shared, see {{0}} statements. I acknowledge that I can revoke my consent at any time. I acknowledge that revoking my consent means EGYM will be unable to provide the services and will delete my account."
+  },
+  "data_privacy": "Data Privacy"
+}

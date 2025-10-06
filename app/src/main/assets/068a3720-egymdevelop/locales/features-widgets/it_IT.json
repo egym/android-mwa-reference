@@ -1,0 +1,13 @@
+{
+  "viewAll": "Mostra tutto",
+  "locationsModal": {
+    "title": "Trova una sede",
+    "searchLocationPlaceholder": "Ricerca delle sedi disponibili",
+    "showXLocations_one": "Mostra {{count}} sede",
+    "showXLocations_other": "Mostra {{count}} sedi",
+    "emptyState": {
+      "title": "Nessuna posizione trovata",
+      "description": "Provare con un altro termine di ricerca."
+    }
+  }
+}

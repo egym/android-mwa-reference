@@ -1,0 +1,8 @@
+{
+  "viewAll": "Veure-ho tot",
+  "locationsModal": {
+    "emptyState": {
+      "description": "Si us plau, proveu un terme de cerca diferent."
+    }
+  }
+}

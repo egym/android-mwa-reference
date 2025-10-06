@@ -1,0 +1,392 @@
+{
+  "homepageTitle": "Edat biològica",
+  "auth": {
+    "signupTitle": "Quina és la teva edat biològica?",
+    "loginTitle": "Avalueu la vostra BioAge i connecteu-vos a l'equip EGYM amb EGYM ID.",
+    "signupDescription": "BioAge és un indicador complet de salut i condició física que combina una àmplia gamma de mesures clau per crear una BioAge que es pot comparar amb la teva edat física real.",
+    "signupDescription2": "Podreu entendre com la vostra rutina d'exercicis afecta positivament la vostra forma física i salut, així com el seguiment del progrés."
+  },
+  "bodyRegions": {
+    "title": "Regions del cos",
+    "upperBody": "Tronc superior",
+    "core": "Tronc central",
+    "lowerBody": "Tronc inferior"
+  },
+  "home": {
+    "assistance": "Assistència",
+    "categories": {
+      "title": "Categories",
+      "strength": "Força",
+      "metabolic": "Metabolisme",
+      "flexibility": "Flexibilitat",
+      "cardio": "Cardio"
+    },
+    "information": {
+      "title": "Informació",
+      "subtitle": "Ajuda d'assistència virtual",
+      "text": "Obteniu més informació sobre BioAge i consells sobre el seu ús",
+      "readMore": "Llegeix més"
+    },
+    "analysisEmptyState": {
+      "text": "Calculat en funció dels resultats de força màxima realitzats a les màquines EGYM o afegits manualment a l'aplicació. Per millorar BioAge amb el temps, utilitza l'anàlisi de desequilibris musculars per ajustar els teus entrenaments de la manera més eficaç."
+    }
+  },
+  "about": {
+    "title": "Què és la BioAge",
+    "topDescription": "Un mesurament t'ajudarà a comprendre fins a quin punt el teu rendiment físic es correspon amb la mitjana per a les persones de la teva edat.",
+    "subheader": "Com es calcula BioAge",
+    "howToBullet1": "Una edat biològica inferior significa un nivell de força física superior.",
+    "howToBullet2": "La millor edat biològica possible és 21.",
+    "recommendationsBullet1": "Per millorar o estar saludable: entrena sovint, menja bé, hidrata't.",
+    "recommendationsBullet2": "Principalment, gaudeix la vida!",
+    "gotItButton": "Entesos",
+    "recommendationsBullet": "Fes servir aquesta informació per parlar amb el teu entrenador sobre els objectius d'entrenament i la possible adaptació d'exercicis en el teu pla d'entrenament."
+  },
+  "assistance": {
+    "title": "Com utilitzar l'assistència",
+    "text": "Feu clic al botó <0></0> de les pantalles de Força, Flexibilitat, Metabòlica i Edat Cardio per obtenir més informació sobre ells."
+  },
+  "chart": {
+    "noDataForThisPeriod": "No hi ha dades per a aquest període",
+    "emptyStateText": "El gràfic de dades històriques apareixerà aquí quan les dades estiguin disponibles",
+    "totalBioageDescription": "El BioAge representa la salut i el rendiment actuals. És la mitjana de força, flexibilitat, metabolisme i cardio. Els valors normals coincideixen amb l’edat real i com més jove sigui el BioAge, millor.",
+    "ageYearsYaxisLabel": "edat (anys)",
+    "metabolicAgeDescription": "L’edat metabòlica es calcula utilitzant el greix corporal, la proporció cintura-maluc i l’índex de massa corporal. L'edat metabòlica us proporciona una visió general de la relació entre l'alçada, el pes i el greix corporal."
+  },
+  "common": {
+    "realAge": "Edat real {{count}} anys",
+    "weight": "Pes",
+    "height": "Alçada",
+    "waist": "Cintura",
+    "hip": "Maluc"
+  },
+  "metabolic": {
+    "title": "Edat metabòlica",
+    "about": {
+      "whatIsHeader": "Què és l'edat metabòlica",
+      "whatIsDescription": "Una avaluació de com tens desenvolupada la salut metabòlica es du a terme mitjançant l'anàlisi de la composició corporal en relació amb una persona mitjana de la teva edat real.",
+      "howCalculatedHeader": "Com es calcula",
+      "howCalculatedDescription": "Analitzem la relació de diversos paràmetres de la teva constitució corporal; com ara el percentatge de greix corporal, l'índex de massa corporal i la ràtio cintura-maluc.",
+      "bodyFatDescription": "El teu percentatge de greix corporal en relació amb la teva massa corporal total. Pots obtenir aquest resultat fent una prova en un analitzador corporal específic o fent servir una bàscula a casa que permeti aquesta mètrica. Mitjana per a homes: ~20%; Mitjana per a dones: ~27%",
+      "bodyMassDescription": "L'IMC té a veure amb el teu pes corporal en relació amb la vostra alçada i mesura amb precisió la vostra estructura corporal general. Un IMC saludable és entre 18,5 i 25.",
+      "waistHipDescription": "La ràtio cintura-maluc compara la circumferència de la cintura i els malucs i et proporciona coneixement sobre la distribució del greix corporal. Com més baixa sigui la ràtio menor él risc de malalties cardiovasculars i altres malalties. Mitjana per a homes: ~ 0,92; Mitjana per a dones: ~ 0,83"
+    },
+    "historyTitle": "Història de l'edat metabòlica"
+  },
+  "measurements": {
+    "title": "Mides",
+    "about": "Prop de {{measurementName}}",
+    "howToMeasure": "Com mesurar {{measurementName}}",
+    "types": {
+      "BMI": {
+        "label": "Índex de massa corporal",
+        "description": "Una mesura habitual per classificar el pes corporal en relació a l'alçada corporal. No obstant això, la significació és limitada, perquè les persones amb molta massa muscular poden tenir un IMC superior a 25 i encara estar sans. Per conèixer millor la composició corporal (greix, músculs,...). Pot ser influenciat positivament per l'activitat física i una alimentació saludable.",
+        "howToMeasureDescription": "Afegeix la teva alçada i pes més recents. Per mantenir l'IMC exacte, has de tenir actualitzat el valor pes."
+      },
+      "BODY_FAT": {
+        "label": "Greix corporal",
+        "description": "Un bon indicador per classificar la teva composició corporal. Un percentatge massa alt de greix corporal és un indicador bàsic de risc per a la salut. Els nivells excel·lents de greix corporal descobreixen el \"paquet de sis\". Pot ser influenciat positivament per l'activitat física i una alimentació saludable.",
+        "howToMeasureDescription": "Els millors resultats s'obtenen amb un analitzador del cos. Posa't en contacte amb el teu centre per fer-ho. Les altres opcions són fer servir una bàscula a casa amb una funció de \"complexió corporal\" o una calculadora en línia per mesurar el percentatge aproximat de greix mesurant les circumferències de les diverses parts del teu cos."
+      },
+      "WAIST_TO_HIP_RATIO": {
+        "label": "Relació cintura-maluc",
+        "description": "Indicador comú de riscos per a la salut cardiovascular mirant la distribució de greixos que es determina principalment genèticament. Els tipus de cos que porten més greix a la zona mitjana del tors es correlacionen amb un risc més elevat. Per a aquests tipus de cos, és encara més important mantenir-se prim en general. Una alimentació saludable i exercici regular ajuda.",
+        "howToMeasureDescription": "Utilitzeu una cinta mètrica per comprovar la circumferència més estreta de la cintura (just a sobre de l'ombligo)."
+      },
+      "WAIST_CM": {
+        "label": "Circumferència de la cintura",
+        "description": "El vostre diàmetre individual del ventre. Influència negativa pel greix visceral i resultat del teu tipus morfològic."
+      },
+      "HIP_CM": {
+        "label": "Circumferència del maluc",
+        "description": "El vostre diàmetre individual de maluc, mesurat a la zona màxima de les natges. Resultat de la seva composició corporal."
+      },
+      "WEIGHT_KG": {
+        "label": "Pes",
+        "description": "El pes corporal només té un valor molt limitat per a la salut. Per obtenir informació real, mireu la composició corporal (greix, músculs,...). En general, un pes corporal elevat crea un major impacte en les articulacions i els tendons. Cal desenvolupar més força muscular per compensar aquests impactes."
+      },
+      "FAT_MASS_INDEX": {
+        "label": "Índex de massa grassa",
+        "description": "L'índex de massa grassa posa la massa greix en relació amb l'alçada corporal. És un molt bon indicador per classificar la teva composició corporal, superior al % de greix corporal. Valors massa alts són un indicador bàsic de risc per a la salut. Els valors excel·lents un signe d'una bona estètica destaquen el \"six pack\". Pot ser influenciat positivament per l'activitat física i una alimentació saludable."
+      },
+      "SKELETAL_MUSCLE_MASS": {
+        "label": "Massa muscular esquelètica",
+        "description": "Els músculs són importants per a la qualitat de vida. Valors massa baixos són un indicador de risc de lesions i fragilitat (Sarcopènia). Els músculs sans regulen el sistema immunitari, redueixen les inflamacions i milloren el metabolisme (Myokines). Influenciat positivament per l'entrenament de força."
+      },
+      "BODY_MUSCLE_PERCENTS": {
+        "label": "Massa muscular",
+        "description": "Els músculs són importants per a la qualitat de vida. Valors massa baixos són un indicador de risc de lesions i fragilitat (Sarcopènia). Els músculs sans regulen el sistema immunitari, redueixen les inflamacions i milloren el metabolisme (Myokines). Influenciat positivament per l'entrenament de força."
+      },
+      "FAT_FREE_MASS": {
+        "label": "Massa lliure de greixos",
+        "description": "Suma de múscul, os, òrgan intern, aigua, tendó, pes sanguini. Valors alts correlacionats amb una definició corporal estètica i valors massa baixos amb un baix nivell de condició física. Influenciat positivament per l'entrenament de força i una alimentació saludable."
+      },
+      "FAT_FREE_MASS_INDEX": {
+        "label": "Índex de massa lliure de greixos",
+        "description": "L'índex de massa lliure de greix és un indicador esportiu. Valors alts correlacionats amb la definició estètica del cos i valors massa baixos amb un baix nivell de condició física. Influenciat positivament per l'entrenament de força i una alimentació saludable."
+      },
+      "VISCERAL_FAT": {
+        "label": "Greix visceral",
+        "description": "El greix visceral és el greix de la cavitat abdominal al voltant dels òrgans interns. Els valors alts són un factor de risc per a malalties metabòliques i processos inflamatoris. Es pot reduir significativament amb l'entrenament físic."
+      },
+      "VISCERAL_FAT_LEVEL_CM2": {
+        "label": "Nivell de greix visceral",
+        "description": "El greix visceral és el greix de la cavitat abdominal al voltant dels òrgans interns. Els valors alts són un factor de risc per a malalties metabòliques i processos inflamatoris. Es pot reduir significativament amb l'entrenament físic."
+      },
+      "VISCERAL_FAT_RATING": {
+        "label": "Classificació del greix visceral",
+        "description": "El greix visceral és el greix de la cavitat abdominal al voltant dels òrgans interns. Els valors alts són un factor de risc per a malalties metabòliques i processos inflamatoris. Es pot reduir significativament amb l'entrenament físic."
+      },
+      "BODY_WATER": {
+        "label": "Aigua corporal",
+        "description": "Dissolvent, agent de transport, recurs nutritiu i regulador de temperatura. La deshidratació és un risc per a la salut perillós i força comú. La ingesta excessiva d'aigua és menys freqüent, però també pot ser un problema en determinades condicions."
+      },
+      "BODY_PROTEIN_KG": {
+        "label": "Proteïna corporal",
+        "description": "Alta correlació amb la massa muscular i de col·lagen. Pool d'aminoàcids que són substàncies bàsiques de la vida, necessàries per a tots els mecanismes de reparació corporal i procés de curació. L'estat baix de proteïnes suprimeix el sistema immunitari i estableix un estat de salut feble. Influenciat positivament per l'entrenament de força i aliments rics en proteïnes."
+      },
+      "BODY_MINERALS_KG": {
+        "label": "Minerals",
+        "description": "Paràmetre per a l'estabilitat òssia. Valors massa baixos s'associen a l'osteoporosi que augmenta el risc de fractures òssies. L'entrenament de força és una profilaxi important, millor combinat amb suplements de calci i vitamina D."
+      },
+      "EXTRA_CELLULAR_WATER": {
+        "label": "Aigua extracel·lular",
+        "description": "La fracció d'aigua corporal representada per tots els components líquids del sistema cardiovascular. És el vostre mitjà de transport metabòlic. Valors massa baixos indiquen una deshidratació no saludable. L'entrenament de resistència pot millorar l'equilibri d'aigua corporal."
+      },
+      "INTRA_CELLULAR_WATER": {
+        "label": "Aigua intracel·lular",
+        "description": "La fracció d'aigua corporal representada en totes les cèl·lules del cos que són les bateries. La fracció d'aigua intracel·lular és el carregador de bateries i el desintoxicant. L'estat baix indica una deshidratació poc saludable, perquè les bateries seques no funcionen. L'entrenament esportiu millora l'estat de l'aigua cel·lular."
+      },
+      "SOFT_LEAN_MASS_KG": {
+        "label": "Massa magra suau",
+        "description": "Suma de l'aigua corporal total, proteïnes i minerals no ossis. Valors baixos indiquen possibles condicions d'alimentació no saludables. A més de la predisposició genètica, és el resultat de la nutrició individual i les condicions d'estil de vida."
+      },
+      "SEGMENTAL_LEAN_TRUNK_KG": {
+        "label": "Tronc de massa magra",
+        "description": "Massa magra del tronc separat. Els valors baixos indiquen un estat segmental feble. Centra't en una massa muscular saludable al tronc. El tronc és el centre del teu cos i juga un paper crucial en l'estabilitat de l'esquena. Podem millorar amb l'entrenament abdominal o l'esquena i una alimentació saludable."
+      },
+      "SEGMENTAL_MUSCLE_TRUNK_KG": {
+        "label": "Músculs del tronc",
+        "description": "Massa muscular del tronc separat. Els valors baixos indiquen un estat segmental feble. Centra't en una massa muscular saludable al tronc. El tronc és el centre del teu cos i juga un paper crucial en l'estabilitat de l'esquena. Es pot millorar amb l'entrenament abdominal o l'esquena."
+      },
+      "TOTAL_ENERGY_EXPENDITURE": {
+        "label": "Despesa energètica total",
+        "description": "Aquesta és l'energia diària que necessita el teu cos. Es determina per la teva despesa energètica en repòs (~70%) i la quantitat d'activitat diària (~30%). Influenciat positivament per l'augment de l'activitat física habitual i l'augment de la despesa energètica en repòs."
+      },
+      "RESTING_ENERGY_EXPENDITURE": {
+        "label": "Despesa energètica en repòs",
+        "description": "Aquesta és l'energia diària que necessita el teu cos per realitzar les funcions més bàsiques quan el teu cos està en repòs, com respirar o fer circular la sang. Està influenciat per molts factors, com ara l'edat, el sexe, la massa muscular i també el nivell de regeneració després de l'activitat física. Influenciat positivament per l'entrenament de força i els entrenaments cardio intensos."
+      },
+      "BODY_PHASE_ANGLE": {
+        "label": "Angle de fase",
+        "description": "L'angle de fase és un indicador de la salut i la integritat de les cèl·lules del cos. Un angle de fase elevat indica membranes cel·lulars intactes. Puja quan estàs sa i baixa quan estàs malalt. També baixa a mesura que envelleixes. Quan augmenteu l'angle de fase, alentiu l'envelliment. L'angle de fase es pot millorar millor amb un augment de la massa lliure de greix en relació amb el pes corporal."
+      },
+      "BASAL_METABOLIC_RATE_KJ": {
+        "label": "Taxa metabòlica basal",
+        "description": "Aquesta és l'energia diària que necessita el teu cos per realitzar les funcions més bàsiques quan el teu cos està en repòs, com respirar o fer circular la sang. Està influenciat per molts factors, com ara l'edat, el sexe, la massa muscular i també el nivell de regeneració després de l'activitat física. Influenciat positivament per l'entrenament de força i els entrenaments cardio intensos."
+      },
+      "SEGMENTAL_LEAN_ARM_KG": {
+        "label": "Braç de massa magra",
+        "description": "Massa magra del braç separat. Els valors baixos indiquen un estat segmental feble. Concentra't per equilibrar el teu costat dret i esquerre per evitar desequilibris musculars. Es pot millorar amb l'entrenament d'un sol braç i una nutrició saludable."
+      },
+      "SEGMENTAL_LEAN_LEG_KG": {
+        "label": "Cama de massa magra",
+        "description": "Massa magra de cames separades. Els valors baixos indiquen un estat segmental feble. Concentra't per equilibrar el teu costat dret i esquerre per evitar desequilibris musculars. Es pot millorar amb l'entrenament d'una cama i una nutrició saludable."
+      },
+      "SEGMENTAL_MUSCLE_ARM_KG": {
+        "label": "Músculs Braç",
+        "description": "Massa muscular del braç separat. Els valors baixos indiquen un estat segmental feble. Concentra't per equilibrar el teu costat dret i esquerre per evitar desequilibris musculars. Es pot millorar amb l'entrenament de bíceps o tríceps d'un sol braç."
+      },
+      "SEGMENTAL_MUSCLE_LEG_KG": {
+        "label": "Músculs Cama",
+        "description": "Massa muscular de la cama separada. Els valors baixos indiquen un estat segmental feble. Concentra't per equilibrar el teu costat dret i esquerre per evitar desequilibris musculars. Es pot millorar amb l'entrenament d'una cama."
+      },
+      "SEGMENTAL_FAT_TRUNK_KG": {
+        "description": "Massa grassa del tronc separat. Els valors baixos indiquen un estat segmental feble. Centra't en una massa de greix saludable al tronc. El tronc és el centre del teu cos i juga un paper crucial en l'estabilitat de l'esquena. Es pot millorar amb l'entrenament abdominal o l'esquena i una alimentació saludable."
+      },
+      "SEGMENTAL_FAT_LEG_KG": {
+        "description": "Massa de greix de cames separades. Els valors baixos indiquen un estat segmental feble. Concentra't per equilibrar el teu costat dret i esquerre per evitar desequilibris musculars. Es pot millorar amb l'entrenament d'una cama i una nutrició saludable."
+      },
+      "SEGMENTAL_FAT_ARM_KG": {
+        "description": "Massa greixosa del braç separat. Els valors baixos indiquen un estat segmental feble. Concentra't per equilibrar el teu costat dret i esquerre per evitar desequilibris musculars. Es pot millorar amb l'entrenament d'un sol braç i una nutrició saludable."
+      },
+      "TORSO_LATERAL_FLEXION_DEGREE": {
+        "label": "Cadena Lateral",
+        "description": "Els músculs laterals del tors es dobleguen, giren i estabilitzen el core. Una major rigidesa muscular i una flexibilitat limitada poden causar dolor a la columna lumbar. A més, la capacitat del diafragma i del pit per expandir-se és limitada, cosa que inhibeix la respiració normal."
+      },
+      "NECK_LATERAL_FLEXION_DEGREE": {
+        "label": "Coll",
+        "description": "Els músculs laterals del coll estabilitzen i mouen el cap. Les posicions monòtones com treballar en un ordinador durant molt de temps i també l'estrès resulten en una disminució de la flexibilitat que pot provocar mal de cap, dolor de tensió, apretament de la mandíbula i dolor a la columna cervical."
+      },
+      "HIP_EXTENSION_DEGREE": {
+        "label": "Maluc",
+        "description": "Els músculs flexors del maluc controlen la teva postura durant moviments com caminar i córrer. Estar assegut llargament en una posició contraïda fa que els músculs s'escurcin, la qual cosa afecta negativament la teva postura i, en última instància, provoca dolor a la columna lumbar."
+      },
+      "CHEST_EXTENSION_DEGREE": {
+        "label": "Pit",
+        "description": "Els músculs del pit mouen la part superior del braç i estabilitzen l'articulació de l'espatlla. Passar molt de temps en una posició cap endavant com quan es treballa amb un ordinador escurça els músculs del pit, la qual cosa pot provocar dolor a la columna cervical, problemes a l'espatlla i inhibeix la funció respiratòria."
+      },
+      "HAMSTRING_EXTENSION_DEGREE": {
+        "label": "Isquiotibials",
+        "description": "La cadena dorsal està formada pels músculs del panxell i els isquiotibials. Les posicions monòtones com seure o anar en bicicleta poden provocar una tensió més alta i una flexibilitat limitada que es tradueix en una mala postura i pot provocar mal d'esquena."
+      },
+      "RESTING_HEART_RATE": {
+        "label": "Freqüència cardíaca en repòs",
+        "description": "La freqüència cardíaca en repòs és el nombre de vegades que el cor batega per minut quan estàs en repòs, com ara quan estàs relaxat, assegut o estirat. Simplement pots avaluar la teva freqüència cardíaca en repòs comptant els batecs del cor durant 15 segons i multiplicar aquest valor per 4. Podeu trobar el batec del cor al canell o a l'artèria caròtida. Un valor normal per a la freqüència cardíaca en repòs oscil·la entre 50 i 80 batecs per minut. Una freqüència cardíaca en repòs elevada s'associa amb una taxa de mortalitat més alta.",
+        "howtoMeasure": "Simplement podeu avaluar la vostra freqüència cardíaca en repòs comptant els batecs del cor durant 15 segons i multiplicar aquest valor per 4. Podeu trobar el batec del cor al canell o a l'artèria caròtida. Un valor normal per a la freqüència cardíaca en repòs oscil·la entre 50 i 80 batecs per minut. Una freqüència cardíaca en repòs elevada s'associa amb una taxa de mortalitat més alta."
+      },
+      "BLOOD_PRESSURE_MMHG": {
+        "label": "Pressió arterial",
+        "description": "La pressió arterial reflecteix la salut general del sistema cardiovascular. Una pressió arterial alta pot ser un indicador de malalties subjacents i pot tenir efectes a llarg termini. Una pressió arterial normal és d'uns 120 sistòlics i 80 diastòlics.",
+        "howtoMeasureListHeader": "La pressió arterial es mesura en mil·límetres de mercuri (mmHg) i es dóna en 2 números:",
+        "howtoMeasureBullet1": "pressió sistòlica: la pressió quan el cor expulsa la sang pel cos",
+        "howtoMeasureBullet2": "pressió diastòlica: la pressió quan el cor descansa entre batecs i la sang s'empeny al voltant del cor",
+        "howtoMeasureListFooter": "El nombre més alt és sempre la pressió sistòlica i sempre es dóna primer. Per exemple, una pressió arterial donada com a \"120 sobre 80\" o 120/80 mmHg significa una pressió sistòlica de 120 mmHg i una pressió diastòlica de 80 mmHg.",
+        "howtoMeasureFooter": "Podeu avaluar la vostra pressió arterial amb el monitor de pressió arterial.",
+        "howtoMeasureHint": "No fumeu ni beveu begudes amb cafeïna ni feu exercici durant els 30 minuts abans de mesurar la vostra pressió arterial. Seieu amb l'esquena recta i recolzada. No prengueu la mesura sobre la roba."
+      },
+      "VO2MAX": {
+        "label": "VO2max",
+        "description": "El VO2max és una mesura directa de la teva capacitat cardiovascular i reflecteix la capacitat del teu cos per treballar intensitats més altes durant molt de temps. Pots accedir al teu VO2max mitjançant la prova de cardio i amb dispositius esportius o rellotges.",
+        "howtoMeasureLine1": "El VO2max és una mesura directa de la teva capacitat cardiovascular i reflecteix la capacitat del teu cos per treballar intensitats més altes durant molt de temps.",
+        "howtoMeasureLine2": "El VO2max es mesura en mil·lilitres d'oxigen utilitzat en un minut per quilogram de pes corporal (mL/kg/min).",
+        "howtoMeasureLine3": "Pots avaluar el teu VO2max mitjançant la prova de cardio i amb dispositius esportius o rellotges."
+      }
+    },
+    "interpretation": {
+      "low": "Baix",
+      "normal": "Normal",
+      "excellent": "Excel·lent",
+      "elevated": "Elevat"
+    }
+  },
+  "strength": {
+    "title": "Força Edat",
+    "about": {
+      "whatIsHeader": "Què és la Força Salut",
+      "whatIsDescription": "Un mesurament de fins a quin punt funciona el teu sistema muscular comparant-lo amb una persona mitjana de la teva edat.",
+      "howCalculatedHeader": "Com es calcula",
+      "howCalculatedDescription": "Analitzem els resultats de totes les proves de força màxima (manual o basada en màquina d'EGYM) per identificar les teves capacitats de força i desequilibris musculars en 3 zones del cos (tronc superior, tronc central i tronc inferior).",
+      "theKeyMetric": "La mètrica clau és la ràtio de la teva força en relació amb el pes corporal.",
+      "theIdealRatio": "La ràtio ideal depèn del teu sexe i de l'exercici que facis."
+    },
+    "historyTitle": "Història de l'edat de la força",
+    "takeStrengthTest": "Fes la prova de força",
+    "measurementTrackingDescription": "Intenta repetir l'exercici tan sovint com puguis d'una manera controlada, amb el millor pes que puguis. El mesurament de la força màxima es calcularà basat en el resultat que hagis posat.",
+    "measurementCalculatedDescription": "Aquest valor representa la quantitat de força que has gastat durant la prova.",
+    "measurementTrackSuccess": "Els teus resultats s'han enregistrat correctament",
+    "muscleBalance": {
+      "emptyState": {
+        "title": "Descobreix la teva força",
+        "text": "Feu una prova de força per analitzar el vostre desequilibri muscular"
+      },
+      "greatWork": "Bona feina!",
+      "statusImbalanced": "Desequilibrat",
+      "statusBalanced": "Equilibrat",
+      "imbalanced": {
+        "abs": "Centra't més en els abdominals",
+        "biceps": "Centra't més en els bíceps",
+        "calves": "Centra't més en els bessons",
+        "chest": "Centra't més en el pit",
+        "hamstring": "Centra't més en ",
+        "inner_hips": "Centra't més en els malucs interns",
+        "lats": "Centra't més en els laterals",
+        "left_gluteus": "Centra't més en el gluti esquerre",
+        "left_torso": "Centra't més en el tors esquerre",
+        "lower_back": "Centra't més en la part inferior de l'esquena",
+        "outer_hips": "Centra't més en els malucs externs",
+        "quadriceps": "Centra't més en els quàdriceps",
+        "right_gluteus": "Centra't més en el gluti dret",
+        "right_torso": "Centra't més en el tors dret",
+        "shoulder": "Centra't més en les espatlles",
+        "thighs": "Centra't més en les cuixes",
+        "triceps": "Centra't més en els tríceps",
+        "upper_back": "Centra't més en la part superior de l'esquena",
+        "rear_shoulder": "Concentreu-vos més a les espatlles posteriors"
+      },
+      "muscle": {
+        "abs": "Abdominals",
+        "biceps": "Bíceps",
+        "calves": "Bessons",
+        "chest": "Pit",
+        "hamstring": "Isquiotibials",
+        "inner_hips": "Malucs interns",
+        "lats": "Laterals",
+        "left_gluteus": "Gluti esquerre",
+        "left_torso": "Tors esquerre",
+        "lower_back": "Part inferior de l'esquena",
+        "outer_hips": "Malucs externs",
+        "quadriceps": "Quàdriceps",
+        "right_gluteus": "Gluti dret",
+        "right_torso": "Tors dret",
+        "shoulder": "Espatlla",
+        "thighs": "Cuixes",
+        "triceps": "Tríceps",
+        "upper_back": "Part superior de l'esquena",
+        "rear_shoulder": "Espatlla posterior"
+      },
+      "guidanceTextBullet3": "Per fer la prova de força, completeu els exercicis recomanats per a la part superior del cos, el nucli i la part inferior del cos.",
+      "guidanceTextBullet2": "Podeu trobar els exercicis addicionals prement el botó \"+ Mostra més\".",
+      "guidanceTextBullet1": "Intenta realitzar l'exercici completant tantes repeticions com sigui possible de manera controlada amb el millor pes possible."
+    }
+  },
+  "muscleBalance": {
+    "muscleBalance": "Equilibri muscular",
+    "muscleBalanceAnalysis": "Anàlisi de l'equilibri muscular"
+  },
+  "flexibility": {
+    "title": "Flexibilitat Edat",
+    "about": {
+      "whatIsHeader": "Què és l'edat de la flexibilitat",
+      "whatIsDescription": "Una avaluació de si les teves articulacions tenen un rang de moviment saludable en comparació amb la teva edat real.",
+      "importantNoticeHeader": "Avís important",
+      "importantNoticeDescription": "Flexibility Age està ple de dades de Fitness Hub. Seguiu les instruccions de Fitness Hub, aproveu les proves de flexibilitat i obteniu informació sobre la vostra salut de la flexibilitat.",
+      "howCalculatedHeader": "Com es calcula",
+      "howCalculatedDescription": "Analitzem tots els resultats de les proves de flexibilitat en diverses parts del cos. Els resultats es comparen amb la flexibilitat mitjana d'altres usuaris d'EGYM.",
+      "recommendationDescription": "Fes servir aquesta informació per parlar amb el teu entrenador sobre els objectius d'entrenament i la possible adaptació d'exercicis en el teu pla d'entrenament."
+    },
+    "historyTitle": "Història de l'edat de la flexibilitat",
+    "recommendations": "Per a més informació sobre els exercicis pregunteu al vostre entrenador."
+  },
+  "cardio": {
+    "title": "Edat Cardio",
+    "historyTitle": "Història de l'Edat Cardio",
+    "about": {
+      "whatIsHeader": "Què és l'era del cardio",
+      "whatIsDescription": "Avalua fins a quin punt es desenvolupa la vostra salut cardiovascular observant el vostre nivell de rendiment cardiovascular i comparant-lo amb una persona mitjana de la vostra edat real.",
+      "howCalculatedHeader": "Com es calcula",
+      "howCalculatedDescription": "Prenem la teva capacitat i rendiment cardiovascular a intensitats altes i baixes amb la mètrica VO2max i correlacionem-la amb la pressió arterial i la freqüència cardíaca en repòs. El VO2max es considera generalment el millor indicador de l'aptitud cardiorespiratòria.",
+      "recommendationDescription": "El VO2max pot predir el risc de mort prematura fins i tot millor que alguns factors de risc tradicionals com el sobrepès, el colesterol alt o el tabaquisme. La bona notícia és que, a diferència de la teva edat real, pots reduir la teva Cardio Bio Age amb els esports habituals. Vols fer-te més jove? Segueix entrenant.",
+      "restingHeartRate": "Freqüència cardíaca en repòs",
+      "restingHeartRateDescription": "La freqüència cardíaca normal en repòs per als adults oscil·la entre 60 i 100 batecs per minut.",
+      "bloodPressure": "Pressió arterial",
+      "bloodPressureDescription": "La pressió arterial sistòlica és < 120 mmHg. La pressió arterial diastòlica és < 80 mmHg.",
+      "vo2MAX": "VO2max",
+      "vo2MAXDescription": "Com més gran sigui el vostre VO2max, més oxigen pot utilitzar el vostre cos i millor serà la vostra resistència cardiovascular i cardiovascular.",
+      "normalRange": "Rang normal",
+      "normalRangeMen": "Homes: 40 ml/kg/min",
+      "normalRangeWomen": "Dones: 35 ml/kg/min",
+      "heartRate": "Freqüència cardíaca"
+    },
+    "trackBloodPressure": {
+      "diastolicGreaterThanSystolic": "La pressió diastòlica no pot ser més gran que la sistòlica"
+    }
+  },
+  "myBioage": "La meva edat biològica",
+  "connectedApps": {
+    "syncInProgress": "Sincronització en curs",
+    "syncInProgressDescription": "Pot trigar un parell de minuts a sincronitzar les vostres dades, torneu més tard",
+    "yourDataIsAlwaysSecure": "Les teves dades sempre estan segures",
+    "connectYourData": "Connecta les teves dades",
+    "connectHealthData": "Connecteu les dades de salut",
+    "cardio": {
+      "sharingDataHelpsDetermineCardioAge": "Si compartiu les vostres dades de {{appName}} amb EGYM, com ara <0>{{heartRate}}</0> i <1>{{vo2Max}}</1> , ens podeu ajudar a determinar la vostra edat cardiovascular",
+      "sharingHealthAppData": "Compartir les teves dades <br /> {{healthAppName}} t'ajuda a determinar la teva edat cardiovascular."
+    },
+    "syncError": "Sembla que abans heu rebutjat els permisos {{appName}}. Per tornar-los a activar, vés als permisos {{appName}} i permet l'accés"
+  },
+  "updateProfileModal": {
+    "description": "Afegeix el teu sexe i la data de naixement per obtenir resultats precisos.",
+    "warning": "Es requereix una edat mínima de 13 anys"
+  }
+}

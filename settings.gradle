@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Android MWA Example"
+include ':app', ':capacitor-android', ':capacitor-community-sqlite'
+project(':capacitor-android').projectDir = new File('node_modules/@capacitor/android/capacitor')
+project(':capacitor-community-sqlite').projectDir = new File('node_modules/@capacitor-community/sqlite/android')

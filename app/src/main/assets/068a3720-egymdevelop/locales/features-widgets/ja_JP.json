@@ -1,0 +1,12 @@
+{
+  "viewAll": "全てを見る",
+  "locationsModal": {
+    "title": "場所を探す",
+    "searchLocationPlaceholder": "利用可能なロケーションを検索",
+    "showXLocations_other": "場所{{count}}を表示",
+    "emptyState": {
+      "title": "場所は見つかりませんでした",
+      "description": "別の検索語をお試しください。"
+    }
+  }
+}

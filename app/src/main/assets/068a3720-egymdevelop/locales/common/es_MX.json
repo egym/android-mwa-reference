@@ -1,0 +1,32 @@
+{
+  "auth": {
+    "healthConsentToggleDescription": "Acepto que EGYM procese mis datos de entrenamiento y forma física (datos de salud) con el fin de utilizar los servicios de EGYM. Para más información sobre el tratamiento de mis datos personales, incluidas las categorías de datos de salud del consumidor recopilados o compartidos, véanse las declaraciones {{0}}. Reconozco que puedo revocar mi consentimiento en cualquier momento. Reconozco que revocar mi consentimiento significa que EGYM no podrá prestar los servicios y eliminará mi cuenta.",
+    "optInsTitle": "Tomamos la privacidad en serio",
+    "mirrorOptInAdditionalInfoTitle": "Más información y derecho de cancelación",
+    "mirrorOptInAdditionalInfoText1": "Sí, doy mi consentimiento para que mi perfil de EGYM se vincule a mi perfil de gimnasio* de los gimnasios/clubes locales que configuré en la aplicación y, para este propósito, los datos almacenados en los perfiles se transmiten al otro perfil, por lo que se sincronizan y actualizan continuamente. Puedo retirar mi consentimiento en cualquier momento. Para obtener más información y el derecho cancelatorio, consulte nuestra política de privacidad.",
+    "mirrorOptInAdditionalInfoText2": "Al vincular los perfiles, mi(s) gimnasio(s)/club(es) local que configuré en la aplicación verán el progreso de mi entrenamiento, mis actividades y mis propios análisis de EGYM de mi perfil de EGYM y me proporcionarán planes y análisis de entrenamiento, lo cual me permite ajustar con mayor facilidad el equipo de EGYM a mis necesidades y me brinda aún más apoyo en mi esfuerzo por alcanzar mis metas. Mi consentimiento es voluntario y puede ser revocado en cualquier momento con efecto para el futuro (por ejemplo, en los ajustes del perfile de EGYM).",
+    "mirrorOptInAdditionalInfoText3": "* Para vincular los perfiles, se debe utilizar la misma dirección de correo electrónico para EGYM y tu gimnasio. Por lo tanto, si es necesario, actualiza tus datos maestros en tu gimnasio.",
+    "mirrorOptInRevokeHint": "Este consentimiento se puede revocar en <0>Ajustes de privacidad</0> en cualquier momento."
+  },
+  "common": {
+    "restTime": "Descanso",
+    "discard": "Descartar",
+    "saveChanges": "¿Guardar cambios?",
+    "saveChangesDesc": "Tus cambios se perderán si no los guardas.",
+    "accept": "Aceptar",
+    "details": "Detalles"
+  },
+  "recommendedWeightGuidance": {
+    "EACH_SIDE": "por cara",
+    "ADDED_WEIGHT": "peso añadido",
+    "BAR_PLATES": "barra + placas",
+    "TOTAL_WEIGHT": "total"
+  },
+  "units": {
+    "week": "semana"
+  },
+  "lateralityGuidance": {
+    "UNILATERAL": "por cara"
+  },
+  "data_privacy": "Privacidad de datos"
+}

@@ -1,0 +1,31 @@
+{
+  "auth": {
+    "healthConsentToggleDescription": "Sunt de acord cu prelucrarea de către EGYM a datelor mele de antrenament și de fitness (date de sănătate) în scopul utilizării serviciilor EGYM. Pentru informații suplimentare privind prelucrarea datelor mele cu caracter personal, inclusiv categoriile de date privind sănătatea consumatorilor colectate sau partajate, consultați declarațiile {{0}}. Recunosc că îmi pot revoca consimțământul în orice moment. Recunosc că revocarea consimțământului meu înseamnă că EGYM nu va mai putea furniza serviciile și îmi va șterge contul.",
+    "optInsTitle": "Luăm confidențialitatea în serios",
+    "mirrorOptInAdditionalInfoTitle": "Mail multe informații și dreptul de retragere",
+    "mirrorOptInAdditionalInfoText1": "Da, îmi dau consimțământul pentru corelarea profilului EGYM de cel al sălii*, sala(ile)/clubul(urile) pe care le-am înregistrat în aplicație și, în acest scop, informațiile profilelor sunt transmise între ele pentru sincronizare și update continuu. Pot să-mi retrag consimțământul în orice moment. Pentru mai multe informații și dreptul de retragere vezi politica noastră de confidențialitate.",
+    "mirrorOptInAdditionalInfoText2": "Corelarea profilelor permite sălii(lor)/clubului(lor) de acasă setate în aplicație să-mi vadă progresul antrenamentelor, activitățile mele și analiza mea EGYM din profilul EGYM și să-mi ofere planurile de antrenament și analizele, făcându-mi mai ușor să ajustez echipamentul EGYM nevoilor mele și să-mi sprijine în continuare eforturile de a-mi atinge obiectivele. Acordul meu este voluntar și poate fi suspendat oricând cu efect viitor (de exemplu, în setările de profil EGYM).",
+    "mirrorOptInAdditionalInfoText3": "*Pentru corelarea profilelor trebuie să folosești aceeași adresă de e-mail pentru sală și EGYM.\nDacă este nevoie, te rugăm să-ți actualizezi informațiile la sală.",
+    "mirrorOptInRevokeHint": "Această aprobare poate fi revocată în <0>Setări confidențialitate</0> în orice moment."
+  },
+  "common": {
+    "restTime": "Odihnă ",
+    "discard": "Aruncă",
+    "saveChanges": "Salvați modificările?",
+    "saveChangesDesc": "Modificările dvs. vor fi pierdute dacă nu le salvați.",
+    "details": "Detalii"
+  },
+  "recommendedWeightGuidance": {
+    "EACH_SIDE": "pe fiecare parte",
+    "ADDED_WEIGHT": "greutate adăugată",
+    "BAR_PLATES": "bară + plăci",
+    "TOTAL_WEIGHT": "total"
+  },
+  "units": {
+    "week": "săptămână"
+  },
+  "lateralityGuidance": {
+    "UNILATERAL": "pe fiecare parte"
+  },
+  "data_privacy": "Confidențialitatea datelor"
+}

@@ -1,0 +1,13 @@
+{
+  "viewAll": "Ver todo",
+  "locationsModal": {
+    "title": "Buscar un centro",
+    "searchLocationPlaceholder": "Buscar lugares disponibles",
+    "showXLocations_one": "Mostrar {{count}} ubicación",
+    "showXLocations_other": "Muestra {{count}} ubicaciones",
+    "emptyState": {
+      "title": "No se ha encontrado ninguna ubicación",
+      "description": "Pruebe con otro término de búsqueda."
+    }
+  }
+}

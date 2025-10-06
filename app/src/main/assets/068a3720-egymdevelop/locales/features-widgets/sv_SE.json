@@ -1,0 +1,8 @@
+{
+  "viewAll": "Visa alla",
+  "locationsModal": {
+    "emptyState": {
+      "description": "Försök med en annan sökterm."
+    }
+  }
+}

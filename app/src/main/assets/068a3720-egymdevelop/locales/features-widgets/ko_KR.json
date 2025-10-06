@@ -1,0 +1,8 @@
+{
+  "viewAll": "모두 보기",
+  "locationsModal": {
+    "emptyState": {
+      "description": "다른 검색어를 입력해 보세요."
+    }
+  }
+}

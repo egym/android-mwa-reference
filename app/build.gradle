@@ -1,0 +1,127 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace 'com.ionicexample.myapplication'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.ionicexample.myapplication"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+            // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+            // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        compose true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.activity.compose
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+
+    implementation 'io.ionic:portals:0.12.0'
+    implementation 'io.ionic:liveupdates:0.5.7'
+
+    // plugins
+    implementation 'com.capacitorjs:preferences:7.0.1'
+    implementation project(':capacitor-community-sqlite')
+}
+
+
+// Download and unzip the latest Live Update build from Appflow before building the app.
+// Requires the Appflow CLI: https://ionic.io/docs/appflow/cli
+def appId = "068a3720"
+def channel = "egymdevelop"
+def ionicToken = "ion_L9N8Gqf7xSQovWO9RntyFtHDtNpm1TvblC7I0zb0cr"
+
+def zipName = "${appId}-${channel}.zip"
+def zipFile = file("${project.projectDir}/${zipName}")
+def destinationDir = file("src/main/assets/${appId}-${channel}")
+
+tasks.register("cleanMwaAssets", Delete) {
+    group = "appflow"
+    description = "Clean previous Live Update assets and zip"
+    delete destinationDir, zipFile
+}
+
+tasks.register("downloadMwaBuild", Exec) {
+    group = "appflow"
+    description = "Download Live Update zip from Appflow"
+    dependsOn "cleanMwaAssets"
+    workingDir project.projectDir
+
+    doFirst {
+        println "Downloading Live Update: appId=${appId}, channel=${channel} → ${zipName}"
+    }
+
+    commandLine "bash", "-lc",
+            "appflow live-update download " +
+                    "--app-id=${appId} " +
+                    "--channel-name=${channel} " +
+                    "--token=${ionicToken} " +
+                    "--zip-name=${zipName}"
+
+    outputs.file(zipFile)
+}
+
+tasks.register("unzipMwaBuild", Copy) {
+    group = "appflow"
+    description = "Unzip Live Update into src/main/assets"
+    dependsOn "downloadMwaBuild"
+
+    from { zipTree(zipFile) }
+    into destinationDir
+
+    doFirst {
+        println "Unzipping ${zipName} → ${destinationDir}"
+        destinationDir.mkdirs()
+    }
+
+    inputs.file(zipFile)
+    outputs.dir(destinationDir)
+}
+
+tasks.register("cleanupMwaZip", Delete) {
+    group = "appflow"
+    description = "Remove downloaded zip"
+    dependsOn "unzipMwaBuild"
+    delete zipFile
+}
+
+tasks.matching { it.name == "preBuild" }.all {
+    dependsOn "cleanupMwaZip"
+}

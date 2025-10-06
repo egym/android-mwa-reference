@@ -1,0 +1,20 @@
+{
+  "common": {
+    "restTime": "Відпочинок ",
+    "discard": "Викинути",
+    "saveChanges": "Зберегти зміни?",
+    "saveChangesDesc": "Ваші зміни будуть втрачені, якщо ви їх не збережете."
+  },
+  "recommendedWeightGuidance": {
+    "EACH_SIDE": "на кожну сторону",
+    "ADDED_WEIGHT": "додаткова вага",
+    "BAR_PLATES": "гриф + диски",
+    "TOTAL_WEIGHT": "всього"
+  },
+  "units": {
+    "week": "тиждень"
+  },
+  "lateralityGuidance": {
+    "UNILATERAL": "на кожну сторону"
+  }
+}
