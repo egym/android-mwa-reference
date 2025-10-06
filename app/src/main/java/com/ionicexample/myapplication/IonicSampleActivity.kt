@@ -14,8 +14,7 @@ import io.ionic.portals.PortalView
 import io.ionic.portals.PortalsPubSub
 import io.ionic.portals.SubscriptionResult
 
-private const val PORTAL_KEY =
-    "<ionic portals key>"
+private const val PORTAL_KEY = ""
 
 val initialContext = mapOf(
     "startingRoute" to "/bioage/home",
