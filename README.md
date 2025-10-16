@@ -6,9 +6,7 @@ This project contains an example of integrating an **Ionic Micro Web App (MWA)**
 
 ### 0. Install
 1. In the root folder, run `npm install @capacitor-community/sqlite` to install the plugin.
-2. In the app/build.gradle file, replace the placeholder in
-def ionicToken = ""
-with your actual token.
+2. In the app/build.gradle file, replace the placeholder in def ionicToken = "" with your actual token.
 
 ### 1. Preloading MWA assets
 The `build.gradle` (app module) is configured with custom Gradle tasks to automatically **download and unzip the MWA build from Appflow** into the `assets` directory.
@@ -21,8 +19,7 @@ The `build.gradle` (app module) is configured with custom Gradle tasks to automa
 
 ### 3. PubSub event subscriptions
 The project demonstrates how to:
-- Subscribe to events sent from the web app (e.g., `authToken`, `dismiss`)
-- Publish new messages from Android back to the MWA
+- Subscribe to events sent from the web app (e.g., `dismiss`)
 
 ---
 
