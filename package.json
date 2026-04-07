@@ -2,7 +2,7 @@
   "dependencies": {
     "@capacitor-community/sqlite": "^7.0.1",
     "@capacitor/android": "^7.0.1",
-    "@capacitor/cli": "^7.0.1",
+    "@capacitor/cli": "^7.6.1",
     "@capacitor/core": "^7.0.1",
     "@egym/capacitor-nfc-pass-wallet": "^0.2.0"
   }
