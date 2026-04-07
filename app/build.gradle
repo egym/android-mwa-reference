@@ -59,13 +59,14 @@ dependencies {
     // plugins
     implementation 'com.capacitorjs:preferences:7.0.1'
     implementation project(':capacitor-community-sqlite')
+    implementation project(':capacitor-nfc-pass-wallet')
 }
 
 
 // Download and unzip the latest Live Update build from Appflow before building the app.
 // Requires the Appflow CLI: https://ionic.io/docs/appflow/cli
 def appId = "068a3720"
-def channel = "sportcitydevelop"
+def channel = "reference"
 def ionicToken = ""
 
 def zipName = "${appId}-${channel}.zip"

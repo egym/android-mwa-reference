@@ -24,5 +24,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("app", "workouts")
             startActivity(intent)
         }
+
+         findViewById<Button>(R.id.btnOpenNfc).setOnClickListener {
+            intent.putExtra("app", "nfc")
+            startActivity(intent)
+        }
     }
 }

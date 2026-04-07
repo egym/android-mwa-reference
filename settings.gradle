@@ -20,6 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Android MWA Example"
-include ':app', ':capacitor-android', ':capacitor-community-sqlite'
+include ':app', ':capacitor-android', ':capacitor-community-sqlite', ':capacitor-nfc-pass-wallet'
 project(':capacitor-android').projectDir = new File('node_modules/@capacitor/android/capacitor')
 project(':capacitor-community-sqlite').projectDir = new File('node_modules/@capacitor-community/sqlite/android')
+project(':capacitor-nfc-pass-wallet').projectDir = new File('node_modules/@egym/capacitor-nfc-pass-wallet/android')
