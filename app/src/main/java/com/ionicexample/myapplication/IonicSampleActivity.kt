@@ -30,7 +30,6 @@ class IonicSampleActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ionic_sample)
-        addStatusBarPadding()
         if (!PortalManager.isRegistered()) {
             PortalManager.register(PORTAL_KEY)
         }
@@ -69,20 +68,6 @@ class IonicSampleActivity : AppCompatActivity() {
 
         val myPortalView = PortalView(this@IonicSampleActivity, portal)
         findViewById<FrameLayout>(R.id.mainContainer).addView(myPortalView)
-    }
-
-    private fun addStatusBarPadding() {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, insets ->
-            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(
-                view.paddingLeft,
-                systemBarsInsets.top,
-                view.paddingRight,
-                view.paddingBottom
-            )
-
-            insets
-        }
     }
 
     private fun getInitialContext(app: String): Map<String, String> {
