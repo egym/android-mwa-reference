@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="account_linking_email_hint">Half-baked account email</string>
+    <string name="account_linking_jwt_hint">Fresh emailJWT (paste at runtime)</string>
+    <string name="account_linking_email_required">Enter the email for this account</string>
+    <string name="account_linking_jwt_required">Enter a fresh emailJWT</string>
+    <string name="portal_key_hint">Ionic Portals key (paste at runtime)</string>
+    <string name="portal_key_required">Enter an Ionic Portals key</string>
+    <string name="open_account_linking">Open account linking PR build</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

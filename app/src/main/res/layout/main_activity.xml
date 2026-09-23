@@ -22,4 +22,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open NFC Sample" />
+
+    <EditText
+        android:id="@+id/accountLinkingEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/account_linking_email_hint"
+        android:inputType="textEmailAddress"
+        android:importantForAutofill="no"
+        android:saveEnabled="false" />
+
+    <EditText
+        android:id="@+id/accountLinkingEmailJwt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/account_linking_jwt_hint"
+        android:inputType="textPassword"
+        android:importantForAutofill="no"
+        android:saveEnabled="false" />
+
+    <EditText
+        android:id="@+id/portalKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/portal_key_hint"
+        android:inputType="textPassword"
+        android:importantForAutofill="no"
+        android:saveEnabled="false" />
+
+    <Button
+        android:id="@+id/btnOpenAccountLinking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_account_linking" />
 </LinearLayout>

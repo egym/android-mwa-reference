@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+def accountLinkingBundleDir = providers.gradleProperty("accountLinkingBundleDir").orNull
+
 android {
     namespace 'com.ionicexample.myapplication'
     compileSdk 36
@@ -39,7 +41,31 @@ android {
     buildFeatures {
         compose true
         viewBinding true
+        buildConfig true
     }
+
+    if (accountLinkingBundleDir != null) {
+        def bundle = file(accountLinkingBundleDir)
+        if (!new File(bundle, "index.html").isFile()) {
+            throw new GradleException("accountLinkingBundleDir must point to a built account-linking web app containing index.html")
+        }
+    }
+    defaultConfig {
+        buildConfigField "boolean", "HAS_ACCOUNT_LINKING_BUNDLE", "${accountLinkingBundleDir != null}"
+    }
+    sourceSets.main.assets.srcDir(layout.buildDirectory.dir("generated/accountLinkingAssets"))
+}
+
+def stageAccountLinkingBundle = tasks.register("stageAccountLinkingBundle", Sync) {
+    group = "appflow"
+    description = "Stage the selected local account-linking PR build as Android assets"
+    if (accountLinkingBundleDir != null) {
+        from(file(accountLinkingBundleDir))
+    }
+    into(layout.buildDirectory.dir("generated/accountLinkingAssets/account-linking-pr"))
+}
+tasks.matching { it.name.startsWith("merge") && it.name.endsWith("Assets") }.configureEach {
+    dependsOn stageAccountLinkingBundle
 }
 
 dependencies {
@@ -67,7 +93,6 @@ dependencies {
 // Requires the Appflow CLI: https://ionic.io/docs/appflow/cli
 def appId = "068a3720"
 def channel = "reference"
-def ionicToken = ""
 
 def zipName = "${appId}-${channel}.zip"
 def zipFile = file("${project.projectDir}/${zipName}")
@@ -93,7 +118,6 @@ tasks.register("downloadMwaBuild", Exec) {
             "appflow live-update download " +
                     "--app-id=${appId} " +
                     "--channel-name=${channel} " +
-                    "--token=${ionicToken} " +
                     "--zip-name=${zipName}"
 
     outputs.file(zipFile)
@@ -124,5 +148,7 @@ tasks.register("cleanupMwaZip", Delete) {
 }
 
 tasks.matching { it.name == "preBuild" }.all {
-    dependsOn "cleanupMwaZip"
+    if (accountLinkingBundleDir == null) {
+        dependsOn "cleanupMwaZip"
+    }
 }
