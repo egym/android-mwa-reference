@@ -57,7 +57,7 @@ dependencies {
     implementation 'io.ionic:liveupdates:0.5.7'
 
     // plugins
-    implementation 'com.capacitorjs:preferences:7.0.1'
+    implementation 'com.capacitorjs:preferences:8.0.1'
     implementation project(':capacitor-community-sqlite')
     implementation project(':capacitor-nfc-pass-wallet')
 }
