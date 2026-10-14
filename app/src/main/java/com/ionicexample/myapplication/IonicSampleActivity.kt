@@ -79,12 +79,12 @@ class IonicSampleActivity : AppCompatActivity() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, insets ->
             val insetTypes = WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
             val systemBarsInsets = insets.getInsets(insetTypes)
-            val keyboardVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
+            val keyboardInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
             view.setPadding(
                 systemBarsInsets.left,
                 systemBarsInsets.top,
                 systemBarsInsets.right,
-                if (keyboardVisible) insets.getInsets(WindowInsetsCompat.Type.ime()).bottom else systemBarsInsets.bottom
+                maxOf(systemBarsInsets.bottom, keyboardInsets.bottom)
             )
 
             // Pass zero bar insets on, so WebView 140+ does not pad again; CONSUMED would stop its safe area updates.
