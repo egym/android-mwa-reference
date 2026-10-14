@@ -1,3 +1,6 @@
 node_modules
 .gradle/
 .idea/
+local.properties
+/app/src/main/assets/
+/app/*.zip
