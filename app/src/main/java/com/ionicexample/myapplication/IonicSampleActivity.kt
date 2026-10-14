@@ -3,6 +3,7 @@ package com.ionicexample.myapplication
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.egym.capacitor.nfcpasswallet.CapacitorNFCPassWalletPlugin
@@ -29,7 +30,7 @@ class IonicSampleActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ionic_sample)
-        addStatusBarPadding()
+        addSystemBarsPadding()
         val appId = appToIidMap[app] ?: throw IllegalArgumentException("Invalid app: $app")
         val channelName = "reference"
 
@@ -74,17 +75,19 @@ class IonicSampleActivity : AppCompatActivity() {
         findViewById<FrameLayout>(R.id.mainContainer).addView(myPortalView)
     }
 
-    private fun addStatusBarPadding() {
+    private fun addSystemBarsPadding() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, insets ->
-            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val insetTypes = WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            val systemBarsInsets = insets.getInsets(insetTypes)
             view.setPadding(
-                view.paddingLeft,
+                systemBarsInsets.left,
                 systemBarsInsets.top,
-                view.paddingRight,
-                view.paddingBottom
+                systemBarsInsets.right,
+                systemBarsInsets.bottom
             )
 
-            insets
+            // Pass zero bar insets on, so WebView 140+ does not pad again; CONSUMED would stop its safe area updates.
+            WindowInsetsCompat.Builder(insets).setInsets(insetTypes, Insets.NONE).build()
         }
     }
 
