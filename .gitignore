@@ -4,3 +4,4 @@ node_modules
 local.properties
 /app/src/main/assets/
 /app/*.zip
+/build
