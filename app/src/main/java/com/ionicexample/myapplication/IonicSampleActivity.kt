@@ -3,19 +3,19 @@ package com.ionicexample.myapplication
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.egym.capacitor.nfcpasswallet.CapacitorNFCPassWalletPlugin
 import com.capacitorjs.plugins.preferences.PreferencesPlugin
+import com.getcapacitor.CapConfig
 import com.getcapacitor.community.database.sqlite.CapacitorSQLitePlugin
 import io.ionic.portals.Portal
 import io.ionic.portals.PortalBuilder
-import io.ionic.portals.PortalManager
 import io.ionic.portals.PortalView
 import io.ionic.portals.PortalsPubSub
 import io.ionic.portals.SubscriptionResult
-
-private const val PORTAL_KEY = ""
+import org.json.JSONObject
 
 val appToIidMap = mapOf(
     "bioage" to "068a3720",
@@ -30,10 +30,7 @@ class IonicSampleActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ionic_sample)
-        addStatusBarPadding()
-        if (!PortalManager.isRegistered()) {
-            PortalManager.register(PORTAL_KEY)
-        }
+        addSystemBarsPadding()
         val appId = appToIidMap[app] ?: throw IllegalArgumentException("Invalid app: $app")
         val channelName = "reference"
 
@@ -68,20 +65,30 @@ class IonicSampleActivity : AppCompatActivity() {
         }
 
         val myPortalView = PortalView(this@IonicSampleActivity, portal)
+        // Capacitor 8 pads the window for the system bars; this activity does its own padding.
+        myPortalView.getPortalFragment()?.setConfig(
+            CapConfig.Builder(this@IonicSampleActivity)
+                .setInitialFocus(false)
+                .setPluginsConfiguration(JSONObject().put("SystemBars", JSONObject().put("insetsHandling", "disable")))
+                .create()
+        )
         findViewById<FrameLayout>(R.id.mainContainer).addView(myPortalView)
     }
 
-    private fun addStatusBarPadding() {
+    private fun addSystemBarsPadding() {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, insets ->
-            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val insetTypes = WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
+            val systemBarsInsets = insets.getInsets(insetTypes)
+            val keyboardInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
             view.setPadding(
-                view.paddingLeft,
+                systemBarsInsets.left,
                 systemBarsInsets.top,
-                view.paddingRight,
-                view.paddingBottom
+                systemBarsInsets.right,
+                maxOf(systemBarsInsets.bottom, keyboardInsets.bottom)
             )
 
-            insets
+            // Pass zero bar insets on, so WebView 140+ does not pad again; CONSUMED would stop its safe area updates.
+            WindowInsetsCompat.Builder(insets).setInsets(insetTypes, Insets.NONE).build()
         }
     }
 

@@ -53,11 +53,17 @@ dependencies {
     implementation libs.androidx.navigation.fragment.ktx
     implementation libs.androidx.navigation.ui.ktx
 
-    implementation 'io.ionic:portals:0.12.0'
+    // Capacitor core comes from node_modules; the Maven artifacts must not bring a second copy.
+    implementation project(':capacitor-android')
+    implementation('io.ionic:portals:0.13.1') {
+        exclude group: 'com.capacitorjs', module: 'core'
+    }
     implementation 'io.ionic:liveupdates:0.5.7'
 
     // plugins
-    implementation 'com.capacitorjs:preferences:7.0.1'
+    implementation('com.capacitorjs:preferences:8.0.1') {
+        exclude group: 'com.capacitorjs', module: 'core'
+    }
     implementation project(':capacitor-community-sqlite')
     implementation project(':capacitor-nfc-pass-wallet')
 }
@@ -67,7 +73,7 @@ dependencies {
 // Requires the Appflow CLI: https://ionic.io/docs/appflow/cli
 def appId = "068a3720"
 def channel = "reference"
-def ionicToken = ""
+def ionicToken = (project.findProperty("ionicToken") ?: System.getenv("IONIC_TOKEN") ?: "").toString()
 
 def zipName = "${appId}-${channel}.zip"
 def zipFile = file("${project.projectDir}/${zipName}")
@@ -123,6 +129,8 @@ tasks.register("cleanupMwaZip", Delete) {
     delete zipFile
 }
 
-tasks.matching { it.name == "preBuild" }.all {
-    dependsOn "cleanupMwaZip"
+if (ionicToken) {
+    tasks.matching { it.name == "preBuild" }.all {
+        dependsOn "cleanupMwaZip"
+    }
 }
