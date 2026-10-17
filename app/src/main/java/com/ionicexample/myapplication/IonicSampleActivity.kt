@@ -107,9 +107,9 @@ class IonicSampleActivity : AppCompatActivity() {
         }
     }
 
-    /** The Galaxy session expired, so the whole app starts over at the login. */
+    /** The Galaxy session expired, so the whole app starts over at the login, once per session. */
     private fun logInAgain(expired: BmaSession) {
-        BmaLogin.endSession(expired)
+        if (!BmaLogin.endSession(expired)) return
         startActivity(
             Intent(this, BmaLoginActivity::class.java)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)

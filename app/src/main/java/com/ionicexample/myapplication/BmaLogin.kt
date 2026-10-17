@@ -45,9 +45,11 @@ object BmaLogin {
         }
     }
 
-    /** Ends a session that Galaxy no longer accepts, unless a newer login replaced it already. */
-    fun endSession(expired: BmaSession) {
-        if (session === expired) session = null
+    /** Ends a session that Galaxy no longer accepts. Returns false when it already ended or a newer login replaced it. */
+    fun endSession(expired: BmaSession): Boolean {
+        if (session !== expired) return false
+        session = null
+        return true
     }
 }
 
