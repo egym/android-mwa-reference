@@ -7,6 +7,9 @@
     <string name="bma_login_missing_fields">Enter the email and the password.</string>
     <string name="bma_login_failed_status">Login failed (HTTP %1$d).</string>
     <string name="bma_login_failed">Login failed. Check the connection and bma-login.properties.</string>
+    <string name="mwa_load_failed">Could not load this MWA.</string>
+    <string name="mwa_try_again">Try again</string>
+    <string name="mwa_close">Close</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

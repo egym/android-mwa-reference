@@ -13,7 +13,7 @@ This project contains an example of integrating an **Ionic Micro Web App (MWA)**
 
 Run `npm ci` again after any change to `package.json` or `package-lock.json`. Gradle builds the plugin code inside `node_modules`.
 
-On a fresh install, the first open of each MWA shows an error page while its live update downloads. Go back and open it again.
+Before each open the app syncs the MWA's live update, as the BMA apps do, so the first open on a fresh install shows no error page: a loading view shows until the newest build is on the device (`LiveUpdateLoader.kt`). The sync waits at most 30 seconds. After that, or when the sync fails, the app opens a build downloaded earlier, and with none it shows "Try again" and "Close".
 
 ### 1. Preload an MWA build (optional)
 The `build.gradle` (app module) has Gradle tasks that **download and unzip the MWA build from Appflow** into the `assets` directory. They run only when you give an Appflow token:
