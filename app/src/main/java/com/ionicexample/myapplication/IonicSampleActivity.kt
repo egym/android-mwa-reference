@@ -1,11 +1,13 @@
 package com.ionicexample.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.egym.capacitor.nfcpasswallet.CapacitorNFCPassWalletPlugin
 import com.capacitorjs.plugins.preferences.PreferencesPlugin
 import com.getcapacitor.CapConfig
@@ -15,7 +17,11 @@ import io.ionic.portals.PortalBuilder
 import io.ionic.portals.PortalView
 import io.ionic.portals.PortalsPubSub
 import io.ionic.portals.SubscriptionResult
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
+import java.io.IOException
 
 val appToIidMap = mapOf(
     "bioage" to "068a3720",
@@ -24,15 +30,23 @@ val appToIidMap = mapOf(
 )
 
 class IonicSampleActivity : AppCompatActivity() {
+    private var subscriptionRef: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val app = intent.getStringExtra("app") ?: throw IllegalArgumentException("Missing app extra")
 
         super.onCreate(savedInstanceState)
+        val runsLoggedIn = BmaLogin.runsLoggedIn(app)
+        val bmaSession = if (runsLoggedIn) BmaLogin.session else null
+        if (runsLoggedIn && bmaSession == null) {
+            // A new process starts logged out, so go back to MainActivity, which shows the login.
+            finish()
+            return
+        }
         setContentView(R.layout.activity_ionic_sample)
         addSystemBarsPadding()
         val appId = appToIidMap[app] ?: throw IllegalArgumentException("Invalid app: $app")
-        val channelName = "reference"
+        val channelName = if (bmaSession != null) BuildConfig.BMA_LIVE_UPDATE_CHANNEL else "reference"
 
         val portal: Portal = PortalBuilder("/$app/home")
             .setPlugins(mutableListOf(
@@ -41,7 +55,7 @@ class IonicSampleActivity : AppCompatActivity() {
                 CapacitorNFCPassWalletPlugin::class.java,
                 // and other plugins if needed
             ))
-            .setInitialContext(getInitialContext(app))
+            .setInitialContext(bmaSession?.initialContext(app) ?: getInitialContext(app))
             .setStartDir("$appId-$channelName") // directory with preloaded web app from assets
             .setLiveUpdateConfig(
                 context = this@IonicSampleActivity,
@@ -54,13 +68,14 @@ class IonicSampleActivity : AppCompatActivity() {
             .create()
 
         val portalPubSub = PortalsPubSub.shared
-        portalPubSub.subscribe("subscription") { result: SubscriptionResult ->
+        subscriptionRef = portalPubSub.subscribe("subscription") { result: SubscriptionResult ->
             val json = result.toJSObject().getJSONObject("data")
             val eventType = json.getString("type")
             when (eventType) {
                 "dismiss" -> {
                     finish()
                 }
+                "authToken" -> bmaSession?.let(::publishNewAuthToken)
             }
         }
 
@@ -73,6 +88,23 @@ class IonicSampleActivity : AppCompatActivity() {
                 .create()
         )
         findViewById<FrameLayout>(R.id.mainContainer).addView(myPortalView)
+    }
+
+    override fun onDestroy() {
+        subscriptionRef?.let { PortalsPubSub.shared.unsubscribe("subscription", it) }
+        super.onDestroy()
+    }
+
+    /** Answers the MWA's token request with a new token from Galaxy, as the BMA apps do. */
+    private fun publishNewAuthToken(session: BmaSession) {
+        lifecycleScope.launch {
+            try {
+                val token = withContext(Dispatchers.IO) { session.renewAccessToken() }
+                PortalsPubSub.shared.publish("authToken", token)
+            } catch (e: IOException) {
+                Log.w(BmaLogin.LOG_TAG, "Could not get a new MWA token", e)
+            }
+        }
     }
 
     private fun addSystemBarsPadding() {
