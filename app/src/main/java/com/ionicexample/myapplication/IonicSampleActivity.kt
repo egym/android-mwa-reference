@@ -9,10 +9,8 @@ import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.egym.capacitor.nfcpasswallet.CapacitorNFCPassWalletPlugin
-import com.capacitorjs.plugins.preferences.PreferencesPlugin
+import com.egym.capacitor.mwanavigation.EgymMwa
 import com.getcapacitor.CapConfig
-import com.getcapacitor.community.database.sqlite.CapacitorSQLitePlugin
 import io.ionic.portals.Portal
 import io.ionic.portals.PortalBuilder
 import io.ionic.portals.PortalView
@@ -48,12 +46,7 @@ class IonicSampleActivity : AppCompatActivity() {
         val channelName = if (bmaSession != null) BuildConfig.BMA_LIVE_UPDATE_CHANNEL else "reference"
 
         val portal: Portal = PortalBuilder("/$app/home")
-            .setPlugins(mutableListOf(
-                PreferencesPlugin::class.java,
-                CapacitorSQLitePlugin::class.java,
-                CapacitorNFCPassWalletPlugin::class.java,
-                // and other plugins if needed
-            ))
+            .setPlugins(EgymMwa.portalPlugins.toMutableList())
             .setInitialContext(bmaSession?.initialContext(app) ?: getInitialContext(app))
             .setStartDir("$appId-$channelName") // directory with preloaded web app from assets
             .setLiveUpdateConfig(
@@ -80,12 +73,18 @@ class IonicSampleActivity : AppCompatActivity() {
 
         val myPortalView = PortalView(this@IonicSampleActivity, portal)
         // Capacitor 8 pads the window for the system bars; this activity does its own padding.
+        // Back closes this screen; the App plugin from the package would take it and do nothing.
         myPortalView.getPortalFragment()?.setConfig(
             CapConfig.Builder(this@IonicSampleActivity)
                 .setInitialFocus(false)
-                .setPluginsConfiguration(JSONObject().put("SystemBars", JSONObject().put("insetsHandling", "disable")))
+                .setPluginsConfiguration(
+                    JSONObject()
+                        .put("SystemBars", JSONObject().put("insetsHandling", "disable"))
+                        .put("App", JSONObject().put("disableBackButtonHandler", true))
+                )
                 .create()
         )
+        myPortalView.getPortalFragment()?.addWebViewListener(EgymMwa.zeroCssSafeAreaListener())
         findViewById<FrameLayout>(R.id.mainContainer).addView(myPortalView)
     }
 
