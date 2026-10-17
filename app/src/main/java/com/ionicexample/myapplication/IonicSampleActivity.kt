@@ -3,12 +3,16 @@ package com.ionicexample.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.withStarted
 import com.egym.capacitor.mwanavigation.EgymMwa
 import com.getcapacitor.CapConfig
 import io.ionic.portals.Portal
@@ -55,7 +59,7 @@ class IonicSampleActivity : AppCompatActivity() {
                     appId = appId,
                     channelName = channelName,
                 ),
-                true
+                false
             )
             .create()
 
@@ -71,6 +75,32 @@ class IonicSampleActivity : AppCompatActivity() {
             }
         }
 
+        findViewById<Button>(R.id.btnClose).setOnClickListener { finish() }
+        findViewById<Button>(R.id.btnTryAgain).setOnClickListener { loadPortal(portal, appId) }
+        loadPortal(portal, appId)
+    }
+
+    /** Shows the Portal only after its live update is on the device, so the first open is never blank. */
+    private fun loadPortal(portal: Portal, appId: String) {
+        showLoadStatus(isLoading = true)
+        LiveUpdateLoader.load(this, appId) { hasBuild ->
+            if (isFinishing || isDestroyed) return@load
+            if (hasBuild) {
+                lifecycleScope.launch { lifecycle.withStarted { showPortal(portal) } }
+            } else {
+                showLoadStatus(isLoading = false)
+            }
+        }
+    }
+
+    private fun showLoadStatus(isLoading: Boolean) {
+        findViewById<View>(R.id.mwaLoading).isVisible = isLoading
+        findViewById<View>(R.id.mwaLoadFailed).isVisible = !isLoading
+        findViewById<View>(R.id.btnTryAgain).isVisible = !isLoading
+    }
+
+    private fun showPortal(portal: Portal) {
+        findViewById<View>(R.id.mwaStatus).isVisible = false
         val myPortalView = PortalView(this@IonicSampleActivity, portal)
         // Capacitor 8 pads the window for the system bars; this activity does its own padding.
         // Back closes this screen; the App plugin from the package would take it and do nothing.
