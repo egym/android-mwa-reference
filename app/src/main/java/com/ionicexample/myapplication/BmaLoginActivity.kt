@@ -11,9 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.ionicexample.myapplication.databinding.ActivityBmaLoginBinding
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.io.IOException
 
 /** Logs in as a BMA (Galaxy) user before the MWA buttons show. Only started when [BmaLogin.isEnabled]. */
@@ -51,7 +49,7 @@ class BmaLoginActivity : AppCompatActivity() {
         showProgress(true)
         lifecycleScope.launch {
             try {
-                withContext(Dispatchers.IO) { BmaLogin.logIn(email, password) }
+                BmaLogin.logIn(email, password)
                 startActivity(Intent(this@BmaLoginActivity, MainActivity::class.java))
                 finish()
             } catch (e: GalaxyHttpException) {

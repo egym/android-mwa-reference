@@ -1,5 +1,6 @@
 package com.ionicexample.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.FrameLayout
@@ -15,9 +16,7 @@ import io.ionic.portals.PortalBuilder
 import io.ionic.portals.PortalView
 import io.ionic.portals.PortalsPubSub
 import io.ionic.portals.SubscriptionResult
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.io.IOException
 
@@ -98,12 +97,23 @@ class IonicSampleActivity : AppCompatActivity() {
     private fun publishNewAuthToken(session: BmaSession) {
         lifecycleScope.launch {
             try {
-                val token = withContext(Dispatchers.IO) { session.renewAccessToken() }
-                PortalsPubSub.shared.publish("authToken", token)
+                PortalsPubSub.shared.publish("authToken", session.renewAccessToken())
+            } catch (e: GalaxyHttpException) {
+                Log.w(BmaLogin.LOG_TAG, "Galaxy answered the MWA token request with HTTP ${e.status}")
+                if (e.rejectsSession) logInAgain(session)
             } catch (e: IOException) {
                 Log.w(BmaLogin.LOG_TAG, "Could not get a new MWA token", e)
             }
         }
+    }
+
+    /** The Galaxy session expired, so the whole app starts over at the login. */
+    private fun logInAgain(expired: BmaSession) {
+        BmaLogin.endSession(expired)
+        startActivity(
+            Intent(this, BmaLoginActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        )
     }
 
     private fun addSystemBarsPadding() {
