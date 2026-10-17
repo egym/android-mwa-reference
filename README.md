@@ -39,6 +39,16 @@ The project demonstrates how to:
 
 A plugin from Maven instead (like Preferences) needs `exclude group: 'com.capacitorjs', module: 'core'` on its line, so the app keeps one Capacitor core.
 
+### 5. Log in as a BMA user (optional, for EGYM testing)
+By default the MWAs get the sample context from `IonicSampleActivity` and run without a logged-in member. For EGYM testing, the app can first log in as a BMA (Galaxy) user and then open Workouts and NFC as that user, the way the BMA apps do:
+1. Copy `bma-login.properties.example` to `bma-login.properties` in the root folder. Git ignores this file.
+2. Fill in its three keys with the values of an EGYM test environment: `galaxyUrl` (the Galaxy host of the brand), `mwaApiUrl` (the mwa-api host that the MWAs call) and `liveUpdateChannel` (the Appflow channel for Workouts and NFC).
+3. Build and run the app. It starts with "Log in as a BMA user".
+
+After the login, Workouts and NFC open on that channel with `clientId` `egym`, the MWA token as `authToken`, the mwa-api host as `url`, and the user's home gym and email. Bioage keeps the sample context and the channel `reference`. When an MWA asks for a new token (type `authToken` on the topic `subscription`), the app gets one from Galaxy and publishes it on the topic `authToken`.
+
+The password goes only to Galaxy and is never stored or logged. The token stays in memory, so a new app process starts at the login again. Never commit the file, a user, a password or a host name. To build without the login, delete the file.
+
 ---
 
 ## ✅ Summary
