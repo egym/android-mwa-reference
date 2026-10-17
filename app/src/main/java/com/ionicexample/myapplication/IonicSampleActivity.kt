@@ -74,12 +74,18 @@ class IonicSampleActivity : AppCompatActivity() {
 
         val myPortalView = PortalView(this@IonicSampleActivity, portal)
         // Capacitor 8 pads the window for the system bars; this activity does its own padding.
+        // Back closes this screen; the App plugin from the package would take it and do nothing.
         myPortalView.getPortalFragment()?.setConfig(
             CapConfig.Builder(this@IonicSampleActivity)
                 .setInitialFocus(false)
-                .setPluginsConfiguration(JSONObject().put("SystemBars", JSONObject().put("insetsHandling", "disable")))
+                .setPluginsConfiguration(
+                    JSONObject()
+                        .put("SystemBars", JSONObject().put("insetsHandling", "disable"))
+                        .put("App", JSONObject().put("disableBackButtonHandler", true))
+                )
                 .create()
         )
+        myPortalView.getPortalFragment()?.addWebViewListener(EgymMwa.zeroCssSafeAreaListener())
         findViewById<FrameLayout>(R.id.mainContainer).addView(myPortalView)
     }
 
