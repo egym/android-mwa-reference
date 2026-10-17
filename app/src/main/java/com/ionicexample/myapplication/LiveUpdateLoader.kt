@@ -49,18 +49,22 @@ object LiveUpdateLoader {
             }
         }
 
-        timeout = Runnable { finish(sync = null) }
-        mainHandler.postDelayed(timeout, SYNC_TIMEOUT_MS)
-        runningSyncs[appId]?.let { runningSync ->
-            runningSync.waiters += ::finish
-            return
+        val runningSync = runningSyncs.getOrPut(appId) { startSync(appContext, appId) }
+        val waiter: (RunningSync) -> Unit = ::finish
+        runningSync.waiters += waiter
+        timeout = Runnable {
+            // The sync keeps running for later loads, but no longer holds this screen.
+            runningSync.waiters -= waiter
+            finish(sync = null)
         }
+        mainHandler.postDelayed(timeout, SYNC_TIMEOUT_MS)
+    }
+
+    private fun startSync(context: Context, appId: String): RunningSync {
         val sync = RunningSync()
-        sync.waiters += ::finish
-        runningSyncs[appId] = sync
         worker.execute {
-            sync.previousBuild = LiveUpdateManager.getLatestAppDirectory(appContext, appId)
-            LiveUpdateManager.sync(appContext, appId, object : SyncCallback {
+            sync.previousBuild = LiveUpdateManager.getLatestAppDirectory(context, appId)
+            LiveUpdateManager.sync(context, appId, object : SyncCallback {
                 override fun onAppComplete(syncResult: SyncResult) {
                     sync.hasNewBuild = syncResult.latestAppDirectoryChanged
                 }
@@ -75,6 +79,7 @@ object LiveUpdateLoader {
                 }
             })
         }
+        return sync
     }
 
     private fun isValidBuild(directory: File?): Boolean = directory != null && File(directory, "index.html").isFile
