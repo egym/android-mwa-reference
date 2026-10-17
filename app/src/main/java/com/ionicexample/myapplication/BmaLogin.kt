@@ -44,6 +44,11 @@ object BmaLogin {
             )
         }
     }
+
+    /** Ends a session that Galaxy no longer accepts, unless a newer login replaced it already. */
+    fun endSession(expired: BmaSession) {
+        if (session === expired) session = null
+    }
 }
 
 class BmaSession(
@@ -130,7 +135,11 @@ class GalaxyClient(galaxyUrl: String) {
     }
 }
 
-class GalaxyHttpException(val status: Int) : IOException("Galaxy answered HTTP $status")
+class GalaxyHttpException(val status: Int) : IOException("Galaxy answered HTTP $status") {
+    /** Galaxy no longer accepts the session, for example because it expired. */
+    val rejectsSession: Boolean
+        get() = status == HttpURLConnection.HTTP_UNAUTHORIZED || status == HttpURLConnection.HTTP_FORBIDDEN
+}
 
 private fun JSONObject.requireString(name: String): String =
     if (isNull(name)) throw IOException("Galaxy answered without $name") else getString(name)

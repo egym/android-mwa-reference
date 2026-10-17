@@ -45,7 +45,7 @@ By default the MWAs get the sample context from `IonicSampleActivity` and run wi
 2. Fill in its three keys with the values of an EGYM test environment: `galaxyUrl` (the Galaxy host of the brand), `mwaApiUrl` (the mwa-api host that the MWAs call) and `liveUpdateChannel` (the Appflow channel for Workouts and NFC).
 3. Build and run the app. It starts with "Log in as a BMA user".
 
-After the login, Workouts and NFC open on that channel with `clientId` `egym`, the MWA token as `authToken`, the mwa-api host as `url`, and the user's home gym and email. Bioage keeps the sample context and the channel `reference`. When an MWA asks for a new token (type `authToken` on the topic `subscription`), the app gets one from Galaxy and publishes it on the topic `authToken`.
+After the login, Workouts and NFC open on that channel with `clientId` `egym`, the MWA token as `authToken`, the mwa-api host as `url`, and the user's home gym and email. Bioage keeps the sample context and the channel `reference`. When an MWA asks for a new token (type `authToken` on the topic `subscription`), the app gets one from Galaxy and publishes it on the topic `authToken`. When Galaxy no longer accepts the session, the app starts over at the login.
 
 The password goes only to Galaxy and is never stored or logged. The token stays in memory, so a new app process starts at the login again. Never commit the file, a user, a password or a host name. To build without the login, delete the file.
 
