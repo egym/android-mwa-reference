@@ -9,7 +9,6 @@ import io.ionic.liveupdates.data.model.SyncResult
 import io.ionic.liveupdates.network.SyncCallback
 import java.io.File
 import java.util.concurrent.Executors
-import java.util.concurrent.atomic.AtomicBoolean
 
 /** Syncs the live update of an MWA before its Portal shows, as the BMA apps do, so the first open is never blank. */
 object LiveUpdateLoader {
@@ -18,57 +17,78 @@ object LiveUpdateLoader {
     private const val BUILD_CHECK_DELAY_MS = 100L
 
     private val mainHandler = Handler(Looper.getMainLooper())
-    private val syncWorker = Executors.newSingleThreadExecutor()
-    private val checkWorker = Executors.newSingleThreadExecutor()
+    private val worker = Executors.newCachedThreadPool()
+
+    // The SDK skips a sync while one runs for the same app, so a second load waits for the running one. Main thread only.
+    private val runningSyncs = mutableMapOf<String, RunningSync>()
+
+    private class RunningSync {
+        @Volatile var previousBuild: File? = null
+        @Volatile var hasNewBuild = false
+        val waiters = mutableListOf<(RunningSync) -> Unit>()
+    }
 
     /**
      * Calls [onResult] once on the main thread: true when a valid build is on the device after the sync, after a failed
-     * sync or after 30 seconds. A build in the APK assets under [assetDir] also counts. The app id must already be
-     * registered, as `PortalBuilder.setLiveUpdateConfig` does.
+     * sync or after 30 seconds. A build in the APK assets under [assetDir] also counts. Call it on the main thread. The
+     * app id must already be registered, as `PortalBuilder.setLiveUpdateConfig` does.
      */
     fun load(context: Context, appId: String, assetDir: String, onResult: (hasBuild: Boolean) -> Unit) {
         val appContext = context.applicationContext
-        val isFinished = AtomicBoolean(false)
-        val hasFailed = AtomicBoolean(false)
+        var isFinished = false
+        lateinit var timeout: Runnable
 
-        fun finish(waitForBuild: Boolean) {
-            if (!isFinished.compareAndSet(false, true)) return
-            checkWorker.execute {
-                val hasDownloadedBuild =
-                    if (waitForBuild) awaitDownloadedBuild(appContext, appId) else hasDownloadedBuild(appContext, appId)
-                val hasBuild = hasDownloadedBuild || hasAssetBuild(appContext, assetDir)
+        fun finish(sync: RunningSync?) {
+            if (isFinished) return
+            isFinished = true
+            mainHandler.removeCallbacks(timeout)
+            worker.execute {
+                if (sync?.hasNewBuild == true) awaitNewBuild(appContext, appId, sync.previousBuild)
+                val hasBuild = hasDownloadedBuild(appContext, appId) || hasAssetBuild(appContext, assetDir)
                 mainHandler.post { onResult(hasBuild) }
             }
         }
 
-        val timeout = Runnable { finish(waitForBuild = false) }
+        timeout = Runnable { finish(sync = null) }
         mainHandler.postDelayed(timeout, SYNC_TIMEOUT_MS)
-        syncWorker.execute {
+        runningSyncs[appId]?.let { runningSync ->
+            runningSync.waiters += ::finish
+            return
+        }
+        val sync = RunningSync()
+        sync.waiters += ::finish
+        runningSyncs[appId] = sync
+        worker.execute {
+            sync.previousBuild = LiveUpdateManager.getLatestAppDirectory(appContext, appId)
             LiveUpdateManager.sync(appContext, appId, object : SyncCallback {
-                override fun onAppComplete(syncResult: SyncResult) = Unit
-
-                override fun onAppComplete(failResult: FailResult) {
-                    hasFailed.set(true)
+                override fun onAppComplete(syncResult: SyncResult) {
+                    sync.hasNewBuild = syncResult.latestAppDirectoryChanged
                 }
 
+                override fun onAppComplete(failResult: FailResult) = Unit
+
                 override fun onSyncComplete() {
-                    mainHandler.removeCallbacks(timeout)
-                    finish(waitForBuild = !hasFailed.get())
+                    mainHandler.post {
+                        runningSyncs.remove(appId)
+                        sync.waiters.forEach { it(sync) }
+                    }
                 }
             })
         }
     }
 
-    private fun hasDownloadedBuild(context: Context, appId: String): Boolean =
-        LiveUpdateManager.getLatestAppDirectory(context, appId)?.let { File(it, "index.html").isFile } == true
+    private fun isValidBuild(directory: File?): Boolean = directory != null && File(directory, "index.html").isFile
 
-    // The SDK can report the new folder shortly after its callback.
-    private fun awaitDownloadedBuild(context: Context, appId: String): Boolean {
+    private fun hasDownloadedBuild(context: Context, appId: String): Boolean =
+        isValidBuild(LiveUpdateManager.getLatestAppDirectory(context, appId))
+
+    // After a sync with a new build, the SDK can report the new folder shortly after its callback.
+    private fun awaitNewBuild(context: Context, appId: String, previousBuild: File?) {
         repeat(BUILD_CHECK_ATTEMPTS) {
-            if (hasDownloadedBuild(context, appId)) return true
+            val latestBuild = LiveUpdateManager.getLatestAppDirectory(context, appId)
+            if (latestBuild != previousBuild && isValidBuild(latestBuild)) return
             Thread.sleep(BUILD_CHECK_DELAY_MS)
         }
-        return hasDownloadedBuild(context, appId)
     }
 
     // A build that app/build.gradle packed into the APK, which the Portal opens from its start directory.
