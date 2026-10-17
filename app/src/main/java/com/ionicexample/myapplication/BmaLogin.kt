@@ -86,10 +86,11 @@ class GalaxyClient(galaxyUrl: String) {
     private val baseUrl = galaxyUrl.trimEnd('/')
     private val cookies = CookieManager()
     private val userAgent = "clientType=MOBILE_DEVICE; devicePlatform=ANDROID; deviceUid=${UUID.randomUUID()}; " +
-        "applicationName=Team; applicationVersion=3.64; applicationVersionCode=501;"
+        "applicationName=RevGen; applicationVersion=100.0; applicationVersionCode=8598;"
 
+    // The member login of the BMA apps; /np/login with club_portal is the staff login and refuses members.
     fun logIn(email: String, password: String): JSONObject =
-        send("/np/login", form = "username=${email.formEncoded()}&password=${password.formEncoded()}&club_portal=true")
+        send("/np/exerciser/login", form = "username=${email.formEncoded()}&password=${password.formEncoded()}")
 
     fun fetchMwaToken(exerciserUuid: String): String =
         send("/np/micro-web-app/v1.0/exercisers/$exerciserUuid/tokens/FLS").requireString("accessToken")
@@ -105,6 +106,7 @@ class GalaxyClient(galaxyUrl: String) {
             connection.connectTimeout = TIMEOUT_MILLIS
             connection.readTimeout = TIMEOUT_MILLIS
             connection.setRequestProperty("Accept", "application/json")
+            connection.setRequestProperty("X-NP-API-Version", "1.5")
             connection.setRequestProperty("X-NP-User-Agent", userAgent)
             cookies.get(uri, emptyMap())["Cookie"]?.takeIf { it.isNotEmpty() }?.let {
                 connection.setRequestProperty("Cookie", it.joinToString("; "))
