@@ -1,5 +1,7 @@
 package com.ionicexample.myapplication
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
@@ -27,18 +29,20 @@ object BmaLogin {
     /** Workouts and NFC run as the logged-in user on the channel from the file; Bioage keeps the sample. */
     fun runsLoggedIn(app: String): Boolean = isEnabled && app in loggedInApps
 
-    /** Logs in at Galaxy and gets the MWA token. Blocking, so call it off the main thread. */
-    fun logIn(email: String, password: String): BmaSession {
-        val galaxy = GalaxyClient(BuildConfig.BMA_GALAXY_URL)
-        val account = galaxy.logIn(email, password)
-        val exerciserUuid = account.requireString("uuid")
-        return BmaSession(
-            galaxy = galaxy,
-            exerciserUuid = exerciserUuid,
-            homeClubUuid = account.requireString("homeClubUuid"),
-            email = if (account.isNull("email")) email else account.getString("email"),
-            accessToken = galaxy.fetchMwaToken(exerciserUuid),
-        ).also { session = it }
+    /** Logs in at Galaxy and gets the MWA token. The session starts only if the calling coroutine is still active. */
+    suspend fun logIn(email: String, password: String) {
+        session = withContext(Dispatchers.IO) {
+            val galaxy = GalaxyClient(BuildConfig.BMA_GALAXY_URL)
+            val account = galaxy.logIn(email, password)
+            val exerciserUuid = account.requireString("uuid")
+            BmaSession(
+                galaxy = galaxy,
+                exerciserUuid = exerciserUuid,
+                homeClubUuid = account.requireString("homeClubUuid"),
+                email = if (account.isNull("email")) email else account.getString("email"),
+                accessToken = galaxy.fetchMwaToken(exerciserUuid),
+            )
+        }
     }
 }
 
@@ -52,8 +56,9 @@ class BmaSession(
     @Volatile
     private var accessToken = accessToken
 
-    /** Gets a new MWA token from Galaxy, as the BMA apps do when an MWA asks for one. Blocking. */
-    fun renewAccessToken(): String = galaxy.fetchMwaToken(exerciserUuid).also { accessToken = it }
+    /** Gets a new MWA token from Galaxy, as the BMA apps do when an MWA asks for one. */
+    suspend fun renewAccessToken(): String =
+        withContext(Dispatchers.IO) { galaxy.fetchMwaToken(exerciserUuid) }.also { accessToken = it }
 
     // No emailJWT key (it turns on the consent guard) and no mwaProtocolVersion (this host drops trackEvent).
     fun initialContext(app: String): Map<String, Any> = mapOf(

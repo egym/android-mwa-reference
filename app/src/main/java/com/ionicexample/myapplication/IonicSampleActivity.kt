@@ -17,9 +17,7 @@ import io.ionic.portals.PortalBuilder
 import io.ionic.portals.PortalView
 import io.ionic.portals.PortalsPubSub
 import io.ionic.portals.SubscriptionResult
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.io.IOException
 
@@ -99,8 +97,7 @@ class IonicSampleActivity : AppCompatActivity() {
     private fun publishNewAuthToken(session: BmaSession) {
         lifecycleScope.launch {
             try {
-                val token = withContext(Dispatchers.IO) { session.renewAccessToken() }
-                PortalsPubSub.shared.publish("authToken", token)
+                PortalsPubSub.shared.publish("authToken", session.renewAccessToken())
             } catch (e: IOException) {
                 Log.w(BmaLogin.LOG_TAG, "Could not get a new MWA token", e)
             }
