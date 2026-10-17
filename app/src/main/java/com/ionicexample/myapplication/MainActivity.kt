@@ -12,6 +12,11 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, IonicSampleActivity::class.java);
 
         super.onCreate(savedInstanceState)
+        if (BmaLogin.isEnabled && BmaLogin.session == null) {
+            startActivity(Intent(this, BmaLoginActivity::class.java))
+            finish()
+            return
+        }
         enableEdgeToEdge()
         setContentView(R.layout.main_activity)
 
