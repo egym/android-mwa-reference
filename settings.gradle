@@ -20,7 +20,10 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Android MWA Example"
-include ':app', ':capacitor-android', ':capacitor-community-sqlite', ':capacitor-nfc-pass-wallet'
+include ':app', ':capacitor-android', ':egym-capacitor-mwa-navigation', ':capacitor-community-sqlite', ':capacitor-nfc-pass-wallet'
 project(':capacitor-android').projectDir = new File('node_modules/@capacitor/android/capacitor')
-project(':capacitor-community-sqlite').projectDir = new File('node_modules/@capacitor-community/sqlite/android')
-project(':capacitor-nfc-pass-wallet').projectDir = new File('node_modules/@egym/capacitor-nfc-pass-wallet/android')
+project(':egym-capacitor-mwa-navigation').projectDir = new File('node_modules/@egym/capacitor-mwa-navigation/android')
+// Linked POC install. After a normal npm install these two sit at node_modules/@capacitor-community/sqlite
+// and node_modules/@egym/capacitor-nfc-pass-wallet.
+project(':capacitor-community-sqlite').projectDir = new File('node_modules/@egym/capacitor-mwa-navigation/node_modules/@capacitor-community/sqlite/android')
+project(':capacitor-nfc-pass-wallet').projectDir = new File('node_modules/@egym/capacitor-mwa-navigation/node_modules/@egym/capacitor-nfc-pass-wallet/android')
