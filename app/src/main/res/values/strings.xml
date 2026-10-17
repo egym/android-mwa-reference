@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="bma_login_title">Log in as a BMA user</string>
+    <string name="bma_login_email">Email</string>
+    <string name="bma_login_password">Password</string>
+    <string name="bma_login_button">Log in</string>
+    <string name="bma_login_missing_fields">Enter the email and the password.</string>
+    <string name="bma_login_failed_status">Login failed (HTTP %1$d).</string>
+    <string name="bma_login_failed">Login failed. Check the connection and bma-login.properties.</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
