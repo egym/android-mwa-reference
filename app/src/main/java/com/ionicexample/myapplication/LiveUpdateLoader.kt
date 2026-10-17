@@ -23,9 +23,10 @@ object LiveUpdateLoader {
 
     /**
      * Calls [onResult] once on the main thread: true when a valid build is on the device after the sync, after a failed
-     * sync or after 30 seconds. The app id must already be registered, as `PortalBuilder.setLiveUpdateConfig` does.
+     * sync or after 30 seconds. A build in the APK assets under [assetDir] also counts. The app id must already be
+     * registered, as `PortalBuilder.setLiveUpdateConfig` does.
      */
-    fun load(context: Context, appId: String, onResult: (hasBuild: Boolean) -> Unit) {
+    fun load(context: Context, appId: String, assetDir: String, onResult: (hasBuild: Boolean) -> Unit) {
         val appContext = context.applicationContext
         val isFinished = AtomicBoolean(false)
         val hasFailed = AtomicBoolean(false)
@@ -33,7 +34,9 @@ object LiveUpdateLoader {
         fun finish(waitForBuild: Boolean) {
             if (!isFinished.compareAndSet(false, true)) return
             checkWorker.execute {
-                val hasBuild = if (waitForBuild) awaitValidBuild(appContext, appId) else hasValidBuild(appContext, appId)
+                val hasDownloadedBuild =
+                    if (waitForBuild) awaitDownloadedBuild(appContext, appId) else hasDownloadedBuild(appContext, appId)
+                val hasBuild = hasDownloadedBuild || hasAssetBuild(appContext, assetDir)
                 mainHandler.post { onResult(hasBuild) }
             }
         }
@@ -56,15 +59,19 @@ object LiveUpdateLoader {
         }
     }
 
-    private fun hasValidBuild(context: Context, appId: String): Boolean =
+    private fun hasDownloadedBuild(context: Context, appId: String): Boolean =
         LiveUpdateManager.getLatestAppDirectory(context, appId)?.let { File(it, "index.html").isFile } == true
 
     // The SDK can report the new folder shortly after its callback.
-    private fun awaitValidBuild(context: Context, appId: String): Boolean {
+    private fun awaitDownloadedBuild(context: Context, appId: String): Boolean {
         repeat(BUILD_CHECK_ATTEMPTS) {
-            if (hasValidBuild(context, appId)) return true
+            if (hasDownloadedBuild(context, appId)) return true
             Thread.sleep(BUILD_CHECK_DELAY_MS)
         }
-        return hasValidBuild(context, appId)
+        return hasDownloadedBuild(context, appId)
     }
+
+    // A build that app/build.gradle packed into the APK, which the Portal opens from its start directory.
+    private fun hasAssetBuild(context: Context, assetDir: String): Boolean =
+        runCatching { context.assets.open("$assetDir/index.html").close() }.isSuccess
 }
