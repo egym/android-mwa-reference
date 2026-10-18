@@ -19,6 +19,10 @@ object HostMessages {
     private val scope = MainScope()
     private var subscriptionRef: Int? = null
 
+    /** The BMA session of the MWA on screen; null for none or for one with the sample context. */
+    @Volatile
+    var screenSession: BmaSession? = null
+
     /** Call on the main thread. Later calls do nothing. */
     fun start(context: Context) {
         if (subscriptionRef != null) return
@@ -26,7 +30,7 @@ object HostMessages {
         subscriptionRef = PortalsPubSub.shared.subscribe("subscription") { result ->
             val type = (result.data as? JSONObject)?.optString("type")
             Log.i(TAG, "Message type $type")
-            if (type == "authToken") BmaLogin.session?.let { publishNewAuthToken(appContext, it) }
+            if (type == "authToken") screenSession?.let { publishNewAuthToken(appContext, it) }
         }
     }
 
@@ -34,7 +38,9 @@ object HostMessages {
     private fun publishNewAuthToken(context: Context, session: BmaSession) {
         scope.launch {
             try {
-                PortalsPubSub.shared.publish("authToken", session.renewAccessToken())
+                val token = session.renewAccessToken()
+                // A login that ended or was replaced during the renewal must not hand out its token.
+                if (BmaLogin.session === session) PortalsPubSub.shared.publish("authToken", token)
             } catch (e: GalaxyHttpException) {
                 Log.w(BmaLogin.LOG_TAG, "Galaxy answered the MWA token request with HTTP ${e.status}")
                 if (e.rejectsSession) logInAgain(context, session)

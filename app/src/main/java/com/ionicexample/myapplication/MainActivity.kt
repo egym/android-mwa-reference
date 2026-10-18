@@ -47,8 +47,15 @@ class MainActivity : AppCompatActivity() {
             // app/build.gradle can bundle a build from Appflow into assets/<appId>-<channel>.
             startDir = "$appId-$channel",
         )
-        val status = EgymMwa.open(this, options) { reason -> Log.i(TAG, "$app closed by ${reason.value}") }
-        if (status != EgymMwaOpenStatus.OPENED) Log.w(TAG, "$app did not open: $status")
+        val status = EgymMwa.open(this, options) { reason ->
+            HostMessages.screenSession = null
+            Log.i(TAG, "$app closed by ${reason.value}")
+        }
+        if (status == EgymMwaOpenStatus.OPENED) {
+            HostMessages.screenSession = bmaSession
+        } else {
+            Log.w(TAG, "$app did not open: $status")
+        }
     }
 
     private fun sampleContext(app: String): Map<String, String> = mapOf(
