@@ -39,8 +39,10 @@ object HostMessages {
         scope.launch {
             try {
                 val token = session.renewAccessToken()
-                // A login that ended or was replaced during the renewal must not hand out its token.
-                if (BmaLogin.session === session) PortalsPubSub.shared.publish("authToken", token)
+                // The screen that asked can close, and its login can end, while the renewal runs.
+                if (screenSession === session && BmaLogin.session === session) {
+                    PortalsPubSub.shared.publish("authToken", token)
+                }
             } catch (e: GalaxyHttpException) {
                 Log.w(BmaLogin.LOG_TAG, "Galaxy answered the MWA token request with HTTP ${e.status}")
                 if (e.rejectsSession) logInAgain(context, session)
