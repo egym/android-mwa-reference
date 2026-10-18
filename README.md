@@ -57,6 +57,8 @@ Lines the package cannot take over:
 - The `include` and `projectDir` lines in `settings.gradle`. Only the app's settings can add Gradle projects, and SQLite and the NFC plugin reach Android only as Gradle modules in `node_modules`.
 - `@capacitor/android` and the `:capacitor-android` project, because the SQLite module depends on `project(':capacitor-android')`.
 
+The EGYM NFC wallet plugin comes with the package, so `package.json` does not list it. The NFC MWA calls it as `CapacitorNFCPassWallet`: on its home screen it asks `isWalletAvailable` and shows "Add to Google Wallet" only when the answer is true. When that button shows, the plugin works in this app.
+
 The package's Status Bar plugin turns on the MWAs' own safe area padding (40px at the top, 20px at the bottom), and the package screen sets the CSS safe areas to 0, because it pads natively. MWA builds made before the safe area fix of BMACG-582 use fixed values, so they show the padding twice. The Workouts and NFC builds on the channel `reference` are such builds.
 
 Try the plugin without a login: open Workouts, connect Chrome DevTools to its WebView (`chrome://inspect`) and run `Capacitor.Plugins.EgymMwaNavigation.open({ appId: 'dcbe378a', channel: 'reference', startingRoute: '/nfc/home', initialContext: { ...JSON.parse(AndroidInitialContext.initialContext()).value, startingRoute: '/nfc/home' } })`. NFC opens full screen; its back arrow resolves the call with `closedBy: 'dismiss'`, Android back with `closedBy: 'back'`.
