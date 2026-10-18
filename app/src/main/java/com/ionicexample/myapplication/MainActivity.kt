@@ -14,6 +14,8 @@ private val appIds = mapOf(
     "bioage" to "068a3720",
     "workouts" to "851e0894",
     "nfc" to "dcbe378a",
+    // The web reference MWA (egym/mwa-reference) demos the EGYM plugins, the MWA navigation plugin among them.
+    "reference" to "9d727e58",
 )
 
 class MainActivity : AppCompatActivity() {
@@ -32,18 +34,24 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnOpenBioage).setOnClickListener { openMwa("bioage") }
         findViewById<Button>(R.id.btnOpenWorkouts).setOnClickListener { openMwa("workouts") }
         findViewById<Button>(R.id.btnOpenNfc).setOnClickListener { openMwa("nfc") }
+        findViewById<Button>(R.id.btnOpenReference).setOnClickListener { openMwa("reference") }
     }
 
     /** The package shows the MWA full screen, loads its live update first and closes it on dismiss or back. */
     private fun openMwa(app: String) {
         val appId = appIds.getValue(app)
         val bmaSession = if (BmaLogin.runsLoggedIn(app)) BmaLogin.session else null
-        val channel = if (bmaSession != null) BuildConfig.BMA_LIVE_UPDATE_CHANNEL else "reference"
+        val channel = when {
+            bmaSession != null -> BuildConfig.BMA_LIVE_UPDATE_CHANNEL
+            app == "reference" -> REFERENCE_CHANNEL
+            else -> "reference"
+        }
+        val startingRoute = if (app == "reference") "/home" else "/$app/home"
         val options = EgymMwaOpenOptions(
             appId = appId,
             channel = channel,
-            startingRoute = "/$app/home",
-            initialContext = bmaSession?.initialContext(app) ?: sampleContext(app),
+            startingRoute = startingRoute,
+            initialContext = bmaSession?.initialContext(app) ?: sampleContext(startingRoute),
             // app/build.gradle can bundle a build from Appflow into assets/<appId>-<channel>.
             startDir = "$appId-$channel",
         )
@@ -58,8 +66,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun sampleContext(app: String): Map<String, String> = mapOf(
-        "startingRoute" to "/$app/home",
+    private fun sampleContext(startingRoute: String): Map<String, String> = mapOf(
+        "startingRoute" to startingRoute,
         "email" to "email@example.com",
         "firstName" to "Oleksandr",
         "lastName" to "Usyk",
@@ -72,5 +80,6 @@ class MainActivity : AppCompatActivity() {
 
     private companion object {
         const val TAG = "MainActivity"
+        const val REFERENCE_CHANNEL = "develop"
     }
 }

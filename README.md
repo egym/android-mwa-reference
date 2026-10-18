@@ -63,6 +63,8 @@ The package's Status Bar plugin turns on the MWAs' own safe area padding (40px a
 
 Try the plugin without a login: open Workouts, connect Chrome DevTools to its WebView (`chrome://inspect`) and run `Capacitor.Plugins.EgymMwaNavigation.open({ appId: 'dcbe378a', channel: 'reference', startingRoute: '/nfc/home', initialContext: { ...JSON.parse(AndroidInitialContext.initialContext()).value, startingRoute: '/nfc/home' } })`. NFC opens full screen; its back arrow resolves the call with `closedBy: 'dismiss'`, Android back with `closedBy: 'back'`.
 
+Or tap "Open Reference MWA". It opens the web reference MWA (`9d727e58`, channel `develop`) with the sample context. Its page "Test MWA Navigation" opens NFC through the plugin with one tap (egym/mwa-reference#45; until that is deployed to `develop`, the page is not there).
+
 ---
 
 ## ✅ Summary
