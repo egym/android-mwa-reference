@@ -2,7 +2,7 @@
 
 This project contains an example of integrating an **Ionic Micro Web App (MWA)** into an Android application.
 
-> This branch is the BMACG-751 proof of concept of the EGYM MWA navigation package (section 6). Do not merge it: it installs the package from a local folder that has no repo yet.
+> This branch is the BMACG-751 proof of concept of the EGYM MWA navigation package (section 6). It installs the package from a local folder until the package has its own repo.
 
 ## 🔑 What’s included
 
