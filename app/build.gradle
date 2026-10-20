@@ -55,7 +55,7 @@ dependencies {
 
     // Capacitor core comes from node_modules; the Maven artifacts must not bring a second copy.
     implementation project(':capacitor-android')
-    implementation('io.ionic:portals:0.13.1') {
+    implementation('io.ionic:portals:0.14.0') {
         exclude group: 'com.capacitorjs', module: 'core'
     }
     implementation 'io.ionic:liveupdates:0.5.7'
