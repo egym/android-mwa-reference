@@ -4,6 +4,19 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+// The optional BMA login reads its hosts and channel from this git-ignored file (README, section 5).
+def bmaLogin = new Properties()
+def bmaLoginFile = rootProject.file('bma-login.properties')
+if (bmaLoginFile.exists()) {
+    bmaLoginFile.withInputStream { bmaLogin.load(it) }
+    ['galaxyUrl', 'mwaApiUrl', 'liveUpdateChannel'].each { key ->
+        if (!bmaLogin.getProperty(key)?.trim()) {
+            throw new GradleException("bma-login.properties has no value for ${key}. Fill it in, or delete the file.")
+        }
+    }
+}
+def bmaLoginValue = { String key -> "\"${bmaLogin.getProperty(key, '').trim()}\"" }
+
 android {
     namespace 'com.ionicexample.myapplication'
     compileSdk 36
@@ -16,6 +29,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'BMA_GALAXY_URL', bmaLoginValue('galaxyUrl')
+        buildConfigField 'String', 'BMA_MWA_API_URL', bmaLoginValue('mwaApiUrl')
+        buildConfigField 'String', 'BMA_LIVE_UPDATE_CHANNEL', bmaLoginValue('liveUpdateChannel')
         aaptOptions {
             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
@@ -37,6 +53,7 @@ android {
         jvmTarget = '11'
     }
     buildFeatures {
+        buildConfig = true
         compose true
         viewBinding true
     }
