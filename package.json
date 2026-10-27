@@ -3,6 +3,6 @@
     "@capacitor-community/sqlite": "^8.1.1",
     "@capacitor/android": "^8.5.3",
     "@capacitor/core": "^8.5.3",
-    "@egym/capacitor-nfc-pass-wallet": "^0.4.0"
+    "@egym/capacitor-nfc-pass-wallet": "^0.4.1"
   }
 }
