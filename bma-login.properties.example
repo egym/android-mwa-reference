@@ -1,0 +1,9 @@
+# Copy this file to bma-login.properties (git ignores it) to start the app with "Log in as a BMA user".
+# Use the values of an EGYM test environment, and never commit them. Delete the file to build without the login.
+
+# Galaxy host of the brand to log in to, without a trailing slash.
+galaxyUrl=https://galaxy.example.com
+# mwa-api host that Workouts and NFC call, without a trailing slash.
+mwaApiUrl=https://mwa-api.example.com
+# Appflow live update channel for Workouts and NFC. Bioage stays on the channel reference.
+liveUpdateChannel=your-channel
