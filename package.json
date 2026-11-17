@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@capacitor/android": "^8.5.3",
-    "@egym/capacitor-mwa-navigation": "file:../../libs/lib-capacitor-mwa-navigation"
+    "@egym-private/capacitor-mwa-navigation": "^0.3.0",
+    "@egym-private/mwa-sdk": "^0.2.1"
   }
 }

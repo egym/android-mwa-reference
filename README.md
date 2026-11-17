@@ -2,7 +2,7 @@
 
 This project contains an example of integrating an **Ionic Micro Web App (MWA)** into an Android application.
 
-> This branch is the BMACG-751 proof of concept of the EGYM MWA navigation package (section 6). It installs the package from a local folder until the package has its own repo.
+> The app opens its MWAs with the EGYM MWA SDK (section 6). The SDK is private: npm installs it from EGYM's registry on JFrog, so a build needs a JFrog token (section 0, step 4).
 
 ## 🔑 What’s included
 
@@ -10,8 +10,8 @@ This project contains an example of integrating an **Ionic Micro Web App (MWA)**
 1. Install Node 22 or newer. The NFC plugin needs it.
 2. Use JDK 21. The JDK inside Android Studio works. On macOS: `export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"`.
 3. Tell Gradle where the Android SDK is: set `sdk.dir` in `local.properties`, or set `ANDROID_HOME`. Android Studio writes `local.properties` when it opens the project.
-4. Get the package folder `lib-capacitor-mwa-navigation` and run `npm install` in it. `package.json` points at it with the path `../../libs/lib-capacitor-mwa-navigation`, relative to this folder.
-5. In the root folder, run `npm ci`. If the package folder sits elsewhere, run `npm install <path to the package folder>` instead.
+4. Set `EGYM_NPM_TOKEN` in the shell to a JFrog token that can read the `@egym-private` packages. EGYM gives partners a read-only token; an EGYM developer uses their own JFrog token. `.npmrc` reads the variable, so never write the token into a file in the repo.
+5. In the root folder, run `npm ci`. An `E401` or `E404` error for an `@egym-private` package means that `EGYM_NPM_TOKEN` is missing or not valid.
 6. Run `./gradlew assembleDebug`, or Run in Android Studio.
 
 Run `npm ci` again after any change to `package.json` or `package-lock.json`. Gradle builds the plugin code inside `node_modules`.
@@ -44,17 +44,18 @@ After the login, Workouts and NFC open on that channel with `clientId` `egym`, t
 
 The password goes only to Galaxy and is never stored or logged. The token stays in memory, so a new app process starts at the login again. Never commit the file, a user, a password or a host name. To build without the login, delete the file.
 
-### 6. The EGYM MWA navigation package (proof of concept)
-`@egym/capacitor-mwa-navigation` brings Capacitor 8, Ionic Portals 0.13, Live Updates 0.5 and nine Capacitor plugins (Preferences, App, Haptics, Keyboard, Status Bar, Browser, Device, community SQLite and the EGYM NFC wallet plugin). Its open call `EgymMwa.open` shows an MWA full screen with one shared live update loader. Its plugin `EgymMwaNavigation` lets an MWA open another MWA full screen (today only NFC, `dcbe378a`). The package closes both on `dismiss`, so the host writes no live update or `dismiss` code.
+### 6. The EGYM MWA SDK
+The package `@egym-private/mwa-sdk`, the EGYM MWA SDK, brings Capacitor 8, Ionic Portals 0.13, Live Updates 0.5, nine Capacitor plugins (Preferences, App, Haptics, Keyboard, Status Bar, Browser, Device, community SQLite and the EGYM NFC wallet plugin) and the navigation plugin `@egym-private/capacitor-mwa-navigation`. Its open call `EgymMwa.open` shows an MWA full screen with one shared live update loader. The plugin `EgymMwaNavigation` lets an MWA open another MWA full screen (today only NFC, `dcbe378a`). The package closes both on `dismiss`, so the host writes no live update or `dismiss` code.
 
 What this app does for it:
-- `package.json`: the package and `@capacitor/android`, nothing else.
-- `settings.gradle`: includes the package's Gradle module and the SQLite and NFC modules from `node_modules`.
-- `app/build.gradle`: one line, `implementation project(':egym-capacitor-mwa-navigation')`.
+- `.npmrc`: the JFrog address of the `@egym-private` packages and the token variable `EGYM_NPM_TOKEN`. It holds no token.
+- `package.json`: the two packages and `@capacitor/android`, nothing else.
+- `settings.gradle`: includes the Gradle modules of the two packages and the SQLite and NFC modules from `node_modules`.
+- `app/build.gradle`: one line, `implementation project(':egym-mwa-sdk')`.
 - `MainActivity.kt`: each MWA opens with `EgymMwa.open`. The package screen pads the system bars and brings the plugin list, the Portal config and the loading and error views.
 
 Lines the package cannot take over:
-- The `include` and `projectDir` lines in `settings.gradle`. Only the app's settings can add Gradle projects, and SQLite and the NFC plugin reach Android only as Gradle modules in `node_modules`.
+- The `include` and `projectDir` lines in `settings.gradle`. Only the app's settings can add Gradle projects, and the navigation plugin, SQLite and the NFC plugin reach Android only as Gradle modules in `node_modules`.
 - `@capacitor/android` and the `:capacitor-android` project, because the SQLite module depends on `project(':capacitor-android')`.
 
 The EGYM NFC wallet plugin comes with the package, so `package.json` does not list it. The NFC MWA calls it as `CapacitorNFCPassWallet`: on its home screen it asks `isWalletAvailable` and shows "Add to Google Wallet" only when the answer is true. When that button shows, the plugin works in this app.
