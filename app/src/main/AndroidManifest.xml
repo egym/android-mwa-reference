@@ -14,10 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".IonicSampleActivity"
-            android:exported="false"
-            android:theme="@style/Theme.MyApplication" />
-        <activity
             android:name=".BmaLoginActivity"
             android:exported="false"
             android:theme="@style/Theme.MyApplication"
